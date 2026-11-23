@@ -503,6 +503,103 @@ details summary{font-weight:600}
 footer{margin-top:clamp(20px,3vw,40px);border-radius:28px 28px 0 0}
 footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
 @media (max-width:760px){.band,.phead{border-radius:20px}.teamband .wrap{border-radius:22px}.split{margin:0 var(--gutter)}.stickbar{border-radius:22px}}
+/* v9 depth */
+.alt{background:var(--soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600' fill='none' stroke='%2311120f' stroke-opacity='.07' stroke-width='1.2'%3E%3Cpath d='M60 330c40-120 190-210 340-190s230 90 330 60 130 80 90 170-200 130-340 110-250 40-340-10-110-90-80-140z'/%3E%3Cpath d='M120 330c30-90 150-160 270-145s190 75 275 52 105 62 72 132-165 104-280 88-205 32-278-8-84-74-59-119z'/%3E%3Cpath d='M180 328c22-64 112-116 204-104s146 58 212 40 80 46 54 98-128 78-216 66-158 24-214-6-62-58-40-94z'/%3E%3Cpath d='M240 326c16-44 78-80 142-72s102 42 148 30 56 32 38 68-90 54-150 46-110 16-150-4-42-42-28-68z'/%3E%3Cpath d='M300 324c10-26 46-48 84-43s60 26 88 18 32 20 22 40-54 32-90 27-64 10-88-2-24-26-16-40z'/%3E%3Cpath d='M352 322c6-13 22-24 40-21s28 13 42 9 16 10 10 20-26 16-43 13-31 5-42-1-11-13-7-20z'/%3E%3C/svg%3E") right -120px top -80px/900px auto no-repeat}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+/* poster tiles on the homepage */
+.view[data-view="home"] .grid{align-items:flex-start;padding-top:6px;padding-bottom:40px}
+.view[data-view="home"] .grid > .card{position:relative;flex-basis:min(72vw,280px);aspect-ratio:3/4;border-radius:24px;overflow:hidden;color:#fff;box-shadow:0 18px 40px -18px rgba(0,0,0,.45);will-change:transform}
+.view[data-view="home"] .grid.big > .card{flex-basis:min(80vw,340px);aspect-ratio:4/5}
+.view[data-view="home"] .grid > .card:nth-child(even){margin-top:34px}
+.view[data-view="home"] .card .ph{position:absolute;inset:0;aspect-ratio:auto;height:100%;border-radius:0;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.view[data-view="home"] .card:hover .ph{transform:scale(1.07)}
+.view[data-view="home"] .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18) 0,rgba(0,0,0,0) 34%,rgba(0,0,0,.82));pointer-events:none}
+.view[data-view="home"] .card .type{position:absolute;z-index:2;left:16px;top:16px;margin:0;background:rgba(255,255,255,.94);color:var(--ink);padding:5px 12px;border-radius:999px;font-size:12.5px}
+.view[data-view="home"] .card h3{position:absolute;z-index:2;left:20px;right:20px;bottom:46px;margin:0;color:#fff;font:600 24px/1.1 var(--head);pointer-events:none}
+.view[data-view="home"] .grid.big .card h3{font-size:28px}
+.view[data-view="home"] .card .meta{position:absolute;z-index:2;left:20px;right:20px;bottom:20px;margin:0;color:#fff;opacity:.86;font-size:13.5px;pointer-events:none}
+.view[data-view="home"] .card .line,.view[data-view="home"] .card .row{display:none}
+/* science feature */
+.feat{position:relative;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:center;margin-top:30px}
+.feat-img{position:relative;aspect-ratio:16/10;border-radius:28px;overflow:hidden;background:#111}
+.feat-img i{position:absolute;inset:0;background:center/cover no-repeat;opacity:0;transform:scale(1.06);transition:opacity .7s ease,transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.feat-img i.on{opacity:1;transform:none}
+.feat-img .pill{position:absolute;left:18px;top:18px;z-index:2}
+.feat-img .coord{position:absolute;right:18px;bottom:16px;z-index:2;font:400 12px var(--mono);color:#fff;letter-spacing:.08em;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.feat-list{position:relative;z-index:2;margin-left:-22%;background:#fff;border-radius:24px;box-shadow:0 30px 70px -28px rgba(0,0,0,.4);padding:10px}
+.feat-list a{display:grid;grid-template-columns:34px 1fr;column-gap:6px;padding:16px 18px;border-radius:16px;text-decoration:none;color:var(--ink);transition:background .2s}
+.feat-list a small{grid-row:1/span 2;font:400 12px var(--mono);color:var(--dim);padding-top:6px}
+.feat-list a b{font:600 20px/1.2 var(--head);letter-spacing:-.01em}
+.feat-list a em{font-style:normal;font-size:14.5px;color:#55574f;max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease,opacity .35s ease,margin .35s}
+.feat-list a.on{background:var(--soft)}
+.feat-list a.on em{max-height:70px;opacity:1;margin-top:4px}
+/* team band: big coordinates behind, card breaks out of the panel */
+.teamband{padding-bottom:70px}
+.teamband .wrap{position:relative;align-items:end;padding-bottom:0}
+.teamband .wrap::before{content:"32°N";position:absolute;right:3%;top:8px;font:700 clamp(90px,15vw,230px)/.9 var(--head);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.09);pointer-events:none}
+.teamband .wrap > div:first-child{position:relative;padding-bottom:clamp(28px,4.2vw,64px)}
+.teamband .wrap > a{position:relative;display:block;margin-bottom:-56px}
+.teamband .pro{box-shadow:0 34px 80px -30px rgba(0,0,0,.7);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.teamband .wrap > a:hover .pro{transform:translateY(-6px)}
+/* category tiles break the row */
+.catrow{align-items:start;padding-bottom:30px}
+.cat:nth-child(even){margin-top:30px}
+.cat{transition:transform .5s cubic-bezier(.2,.7,.2,1);box-shadow:0 18px 40px -22px rgba(0,0,0,.5)}
+.cat:hover{transform:translateY(-8px)}
+/* split: second photo overlaps the first */
+.split{padding-bottom:clamp(60px,7vw,110px)}
+.simg{position:relative;overflow:visible}
+.simg::after{content:"";position:absolute;right:-7%;bottom:-13%;width:44%;aspect-ratio:4/5;background:url(sea.jpg) center/cover;border-radius:20px;border:6px solid #fff;box-shadow:0 26px 60px -24px rgba(0,0,0,.5)}
+.simg::before{content:"32°43′N  117°10′W";position:absolute;left:16px;top:16px;z-index:1;background:rgba(255,255,255,.94);border-radius:999px;padding:6px 12px;font:400 11.5px var(--mono);color:var(--ink)}
+.stx{padding-left:clamp(20px,5vw,80px)}
+.stx .checks{counter-reset:c;display:grid;grid-template-columns:1fr 1fr;gap:22px 30px;margin-top:26px}
+.stx .checks li{counter-increment:c;border:0;padding:0;font:600 18px/1.25 var(--head);color:var(--ink)}
+.stx .checks li::before{content:"0" counter(c);position:static;display:block;width:auto;height:auto;border:0;transform:none;font:400 12px var(--mono);color:var(--blue);margin-bottom:6px}
+/* ticker */
+.marq{overflow:hidden;padding:clamp(18px,3vw,40px) 0 clamp(26px,4vw,52px)}
+.marq > div{display:flex;width:max-content;animation:marq 46s linear infinite}
+.marq span{font:700 clamp(46px,8vw,118px)/1 var(--head);letter-spacing:-.03em;color:var(--ink);padding-right:.5em;white-space:nowrap}
+.marq span.o{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+@keyframes marq{to{transform:translateX(-50%)}}
+/* bands and film */
+.band{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.band:hover{transform:scale(.992)}
+.filmtease{box-shadow:16px 16px 0 -1.5px var(--soft),16px 16px 0 0 var(--ink)}
+.filmtease span{transition:transform .3s}
+.filmtease:hover span{transform:translate(-50%,-50%) scale(1.12)}
+/* science page: alternating rows instead of cards */
+.sgrid.wide{grid-template-columns:1fr;gap:clamp(56px,7vw,104px);counter-reset:s;margin-top:48px}
+.sgrid.wide .scard{position:relative;counter-increment:s;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:clamp(28px,5vw,72px);align-content:center}
+.sgrid.wide .scard > *{grid-column:2}
+.sgrid.wide .scard .sph{grid-column:1;grid-row:1/span 6;aspect-ratio:4/3;border-radius:28px;box-shadow:0 30px 70px -30px rgba(0,0,0,.5)}
+.sgrid.wide .scard:nth-child(even) > *{grid-column:1}
+.sgrid.wide .scard:nth-child(even) .sph{grid-column:2}
+.sgrid.wide .scard::before{content:"0" counter(s);position:absolute;z-index:2;left:-14px;top:-44px;font:700 clamp(70px,9vw,128px)/1 var(--head);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px var(--ink);pointer-events:none}
+.sgrid.wide .scard:nth-child(even)::before{left:auto;right:-14px}
+.sgrid.wide .sph .pill{top:auto;bottom:16px}
+.sgrid.wide .scard dl{max-width:420px}
+.sgrid.wide .scard h3{font-size:clamp(26px,2.8vw,36px);letter-spacing:-.02em}
+.sgrid.wide .scard .type{margin-top:0}
+/* team page: card lifts over the page head */
+.view[data-view="team"] .phead{min-height:clamp(260px,30vw,400px)}
+.view[data-view="team"] .phead + section .pro{box-shadow:0 34px 80px -34px rgba(0,0,0,.6)}
+.roster{align-items:start}
+.slot:nth-child(2){margin-top:26px}
+.slot{box-shadow:0 20px 44px -30px rgba(0,0,0,.35);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.slot:hover{transform:translateY(-6px)}
+@media (max-width:860px){
+  .feat{grid-template-columns:1fr}.feat-list{margin:-40px 12px 0}
+  .teamband .wrap > a{margin-bottom:-40px}
+  .sgrid.wide .scard,.sgrid.wide .scard:nth-child(even){grid-template-columns:1fr}
+  .sgrid.wide .scard > *,.sgrid.wide .scard:nth-child(even) > *,.sgrid.wide .scard .sph,.sgrid.wide .scard:nth-child(even) .sph{grid-column:1;grid-row:auto}
+  .sgrid.wide .scard::before{top:-34px;left:8px}.sgrid.wide .scard:nth-child(even)::before{right:auto;left:8px}
+  .simg::after{right:10px;width:38%}.stx{padding-left:0;padding-top:clamp(40px,10vw,70px)}
+  .slot:nth-child(2){margin-top:0}
+}
+@media (max-width:760px){.cat:nth-child(even){margin-top:18px}.view[data-view="home"] .grid > .card:nth-child(even){margin-top:22px}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.marq > div{animation:none}.feat-img i{transition:none}}
 </style>
 </head>
 <body>
@@ -594,7 +691,7 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
   <section>
     <div class="wrap">
       <div class="headrow"><div><p class="eyebrow">Science expeditions</p><h2>Work a field day with the team</h2></div><a class="btn ghost" href="#/science">All science expeditions</a></div>
-      <div class="sgrid"><article class="scard"><div class="sph" style="background-image:url(surf.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Coastal water survey</h3><p class="line">Sample the water at local beaches and learn how its quality is measured.</p><dl><div><dt>Where</dt><dd>San Diego coast</dd></div><div><dt>Length</dt><dd>1 day</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Coastal%20water%20survey">Register interest</a><a href="#/science">Details ›</a></div></article><article class="scard"><div class="sph" style="background-image:url(sea.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Kelp forest survey dive</h3><p class="line">Dive a kelp forest and record what lives along a survey line.</p><dl><div><dt>Where</dt><dd>San Diego kelp beds</dd></div><div><dt>Length</dt><dd>1 to 2 days</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Kelp%20forest%20survey%20dive">Register interest</a><a href="#/science">Details ›</a></div></article><article class="scard"><div class="sph" style="background-image:url(peaks.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Offshore debris transect</h3><p class="line">Head offshore and log floating debris along a fixed course.</p><dl><div><dt>Where</dt><dd>Offshore San Diego</dd></div><div><dt>Length</dt><dd>1 day</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Offshore%20debris%20transect">Register interest</a><a href="#/science">Details ›</a></div></article><article class="scard"><div class="sph" style="background-image:url(ice.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Reef restoration field week</h3><p class="line">Join a reef restoration project run by a partner operator.</p><dl><div><dt>Where</dt><dd>Destination being selected</dd></div><div><dt>Length</dt><dd>About 1 week</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Reef%20restoration%20field%20week">Register interest</a><a href="#/science">Details ›</a></div></article></div>
+      <div class="feat"><div class="feat-img" id="feat-img"><i style="background-image:url(surf.jpg)" class="on"></i><i style="background-image:url(sea.jpg)"></i><i style="background-image:url(peaks.jpg)"></i><i style="background-image:url(ice.jpg)"></i><span class="pill plan">In planning</span><span class="coord">32°43′N</span></div><div class="feat-list"><a href="#/science" data-k="0" class="on"><small>01</small><b>Coastal water survey</b><em>Sample the water at local beaches and learn how its quality is measured.</em></a><a href="#/science" data-k="1"><small>02</small><b>Kelp forest survey dive</b><em>Dive a kelp forest and record what lives along a survey line.</em></a><a href="#/science" data-k="2"><small>03</small><b>Offshore debris transect</b><em>Head offshore and log floating debris along a fixed course.</em></a><a href="#/science" data-k="3"><small>04</small><b>Reef restoration field week</b><em>Join a reef restoration project run by a partner operator.</em></a></div></div>
     </div>
   </section>
   <section id="activities" class="alt">
@@ -609,6 +706,7 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
       <div class="grid" data-grid="local"></div>
     </div>
   </section>
+  <div class="marq" aria-hidden="true"><div><span>Surf</span><span class="o">Dive</span><span>Paddle</span><span class="o">Climb</span><span>Ride</span><span class="o">Ski</span><span>Sail</span><span class="o">Field science</span><span>Surf</span><span class="o">Dive</span><span>Paddle</span><span class="o">Climb</span><span>Ride</span><span class="o">Ski</span><span>Sail</span><span class="o">Field science</span></div></div>
   <a class="band" href="#/book" style="background-image:url(ice.jpg)"><span><b>Dates are being scheduled now.</b><i>Request dates</i></span></a>
   <section class="split">
     <div class="simg" style="background-image:url(rock.jpg)"></div>
@@ -1372,6 +1470,35 @@ window.scrollTo(0, 0);
     function fit(){ var need = row.scrollWidth > row.clientWidth + 4; all('.arrow', tools).forEach(function(x){ x.hidden = !need; }); }
     window.addEventListener('resize', fit); window.addEventListener('hashchange', function(){ setTimeout(fit, 60); }); setTimeout(fit, 400); setTimeout(fit, 2500);
   });
+
+  /* v9 depth: feature swap, reveals, parallax, tilt */
+  (function(){
+    var fl = all('.feat-list a'), fi = all('#feat-img i');
+    function pick(k){ fl.forEach(function(a, n){ a.classList.toggle('on', n === k); }); fi.forEach(function(x, n){ x.classList.toggle('on', n === k); }); }
+    fl.forEach(function(a, k){ a.addEventListener('mouseenter', function(){ pick(k); }); a.addEventListener('focus', function(){ pick(k); }); a.addEventListener('touchstart', function(){ pick(k); }, {passive: true}); });
+    var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!calm && 'IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (!e.isIntersecting) return; var el = e.target; io.unobserve(el); el.classList.add('in');
+        setTimeout(function(){ el.classList.remove('rv', 'in'); el.style.transitionDelay = ''; }, 1400); }); }, {rootMargin: '0px 0px -8% 0px', threshold: .08});
+      var sel = '.headrow, section h2, .lede, .cat, .feat, .teamband .wrap > *, .band, .simg, .stx, .filmtease, .slot, .sgrid.wide .scard, .creed > div, .steps > div, .view[data-view="home"] .grid > .card, .person, .facts, .form, details';
+      var arm = function(){ all(sel).forEach(function(el){ if (el.dataset.rv) return; el.dataset.rv = 1; var sib = el.parentNode ? Array.prototype.indexOf.call(el.parentNode.children, el) : 0;
+        el.classList.add('rv'); el.style.transitionDelay = Math.min(sib, 5) * 80 + 'ms'; io.observe(el); }); };
+      arm(); setTimeout(arm, 1200);
+    }
+    if (!calm){
+      var px = all('.band, .phead, .thero'), tick = 0;
+      var move = function(){ tick = 0; var vh = window.innerHeight; px.forEach(function(el){ var r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh || !r.height) return;
+        var t = (r.top + r.height / 2 - vh / 2) / vh; el.style.backgroundPosition = 'center ' + (50 + t * 26).toFixed(2) + '%'; }); };
+      window.addEventListener('scroll', function(){ if (!tick) tick = requestAnimationFrame(move); }, {passive: true}); move();
+      if (window.matchMedia('(hover: hover)').matches){
+        document.addEventListener('pointermove', function(e){ var c = e.target.closest && e.target.closest('.view[data-view="home"] .grid > .card'); if (!c) return;
+          var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+          c.style.transition = 'transform .15s ease-out'; c.style.transform = 'perspective(900px) rotateY(' + (x * 7).toFixed(2) + 'deg) rotateX(' + (-y * 7).toFixed(2) + 'deg) translateY(-4px)'; });
+        document.addEventListener('pointerout', function(e){ var c = e.target.closest && e.target.closest('.view[data-view="home"] .grid > .card'); if (!c || c.contains(e.relatedTarget)) return;
+          c.style.transition = 'transform .5s cubic-bezier(.2,.7,.2,1)'; c.style.transform = ''; });
+      }
+    }
+  })();
   window.addEventListener('hashchange', route);
   $('menu').addEventListener('click', function(){ var o = top.classList.toggle('open'); $('menu').setAttribute('aria-expanded', o ? 'true' : 'false'); });
 

@@ -551,7 +551,7 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
 /* split: second photo overlaps the first */
 .split{padding-bottom:clamp(60px,7vw,110px)}
 .simg{position:relative;overflow:visible}
-.simg::after{content:"";position:absolute;right:-7%;bottom:-13%;width:44%;aspect-ratio:4/5;background:url(sea.jpg) center/cover;border-radius:20px;border:6px solid #fff;box-shadow:0 26px 60px -24px rgba(0,0,0,.5)}
+.simg::after{content:"";position:absolute;right:-7%;bottom:-13%;width:44%;aspect-ratio:4/5;background:url(paddle_m.jpg) center/cover;border-radius:20px;border:6px solid #fff;box-shadow:0 26px 60px -24px rgba(0,0,0,.5)}
 .simg::before{content:"32°43′N  117°10′W";position:absolute;left:16px;top:16px;z-index:1;background:rgba(255,255,255,.94);border-radius:999px;padding:6px 12px;font:400 11.5px var(--mono);color:var(--ink)}
 .stx{padding-left:clamp(20px,5vw,80px)}
 .stx .checks{counter-reset:c;display:grid;grid-template-columns:1fr 1fr;gap:22px 30px;margin-top:26px}
@@ -600,6 +600,14 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
 }
 @media (max-width:760px){.cat:nth-child(even){margin-top:18px}.view[data-view="home"] .grid > .card:nth-child(even){margin-top:22px}}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.marq > div{animation:none}.feat-img i{transition:none}}
+/* v10 media */
+.card .ph{background-image:none !important;background-color:#15171a}
+.wrap.two:has(> .filmtease){grid-template-columns:1fr;gap:26px}
+.filmtease{aspect-ratio:21/9;border-radius:28px;box-shadow:none}
+.thero{height:min(64vh,680px)}
+.band,.phead{min-height:clamp(260px,32vw,440px)}
+.band::before{background:linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.05) 70%),linear-gradient(0deg,rgba(0,0,0,.35),rgba(0,0,0,0) 45%)}
+.phead::before{background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.68))}
 </style>
 </head>
 <body>
@@ -684,14 +692,14 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
         <a class="cat" href="#/trips/Sea" style="background-image:url(sea.jpg)"><span><b>Sea</b><i>Surf, dive, paddle, sail</i></span></a>
         <a class="cat" href="#/trips/Land" style="background-image:url(trail.jpg)"><span><b>Land</b><i>Climb, hike, ride</i></span></a>
         <a class="cat" href="#/trips/Snow" style="background-image:url(ski.jpg)"><span><b>Snow and ice</b><i>Ski, Everest, Arctic</i></span></a>
-        <a class="cat" href="#/trips/local" style="background-image:url(room.jpg)"><span><b>Local trips</b><i>From San Diego</i></span></a>
+        <a class="cat" href="#/trips/local" style="background-image:url(local.jpg)"><span><b>Local trips</b><i>From San Diego</i></span></a>
       </div>
     </div>
   </section>
   <section>
     <div class="wrap">
       <div class="headrow"><div><p class="eyebrow">Science expeditions</p><h2>Work a field day with the team</h2></div><a class="btn ghost" href="#/science">All science expeditions</a></div>
-      <div class="feat"><div class="feat-img" id="feat-img"><i style="background-image:url(surf.jpg)" class="on"></i><i style="background-image:url(sea.jpg)"></i><i style="background-image:url(peaks.jpg)"></i><i style="background-image:url(ice.jpg)"></i><span class="pill plan">In planning</span><span class="coord">32°43′N</span></div><div class="feat-list"><a href="#/science" data-k="0" class="on"><small>01</small><b>Coastal water survey</b><em>Sample the water at local beaches and learn how its quality is measured.</em></a><a href="#/science" data-k="1"><small>02</small><b>Kelp forest survey dive</b><em>Dive a kelp forest and record what lives along a survey line.</em></a><a href="#/science" data-k="2"><small>03</small><b>Offshore debris transect</b><em>Head offshore and log floating debris along a fixed course.</em></a><a href="#/science" data-k="3"><small>04</small><b>Reef restoration field week</b><em>Join a reef restoration project run by a partner operator.</em></a></div></div>
+      <div class="feat"><div class="feat-img" id="feat-img"><i style="background-image:url(coast.jpg)" class="on"></i><i style="background-image:url(kelp.jpg)"></i><i style="background-image:url(offshore.jpg)"></i><i style="background-image:url(reef.jpg)"></i><span class="pill plan">In planning</span><span class="coord">32°43′N</span></div><div class="feat-list"><a href="#/science" data-k="0" class="on"><small>01</small><b>Coastal water survey</b><em>Sample the water at local beaches and learn how its quality is measured.</em></a><a href="#/science" data-k="1"><small>02</small><b>Kelp forest survey dive</b><em>Dive a kelp forest and record what lives along a survey line.</em></a><a href="#/science" data-k="2"><small>03</small><b>Offshore debris transect</b><em>Head offshore and log floating debris along a fixed course.</em></a><a href="#/science" data-k="3"><small>04</small><b>Reef restoration field week</b><em>Join a reef restoration project run by a partner operator.</em></a></div></div>
     </div>
   </section>
   <section id="activities" class="alt">
@@ -720,7 +728,7 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
   <section class="alt">
     <div class="wrap two">
       <div><p class="eyebrow">Films</p><h2>Films</h2><p class="lede">Short clips from the kinds of places these trips go.</p><p style="margin-top:20px"><a class="btn ghost" href="#/films">Watch films</a></p></div>
-      <a class="filmtease" href="#/films" aria-label="Watch films"><video src="peaks.mp4" poster="peaks.jpg" muted loop playsinline preload="none" data-auto></video><span>▶</span></a>
+      <a class="filmtease" href="#/films" aria-label="Watch films"><video src="peaks.mp4" poster="peaks_p.jpg" muted loop playsinline preload="none" data-auto></video><span>▶</span></a>
     </div>
   </section>
   </div>
@@ -874,7 +882,7 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
     <div class="phead" style="background-image:url(surf.jpg)"><div class="wrap"><p>Science expeditions</p><h1>Work a field day with the team</h1></div></div>
     <section><div class="wrap">
       <p class="lede">On a science expedition you do the field work. A team scientist leads, and you sample, survey and record alongside them.</p>
-      <div class="sgrid wide"><article class="scard"><div class="sph" style="background-image:url(surf.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Coastal water survey</h3><p class="line">Sample the water at local beaches and learn how its quality is measured.</p><p class="do"><b>What you do</b>Collect samples, log conditions and read the results with the lead scientist.</p><dl><div><dt>Where</dt><dd>San Diego coast</dd></div><div><dt>Length</dt><dd>1 day</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Coastal%20water%20survey">Register interest</a></div></article><article class="scard"><div class="sph" style="background-image:url(sea.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Kelp forest survey dive</h3><p class="line">Dive a kelp forest and record what lives along a survey line.</p><p class="do"><b>What you do</b>Run a transect, count species and enter the data. Divers need a current certification.</p><dl><div><dt>Where</dt><dd>San Diego kelp beds</dd></div><div><dt>Length</dt><dd>1 to 2 days</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Kelp%20forest%20survey%20dive">Register interest</a></div></article><article class="scard"><div class="sph" style="background-image:url(peaks.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Offshore debris transect</h3><p class="line">Head offshore and log floating debris along a fixed course.</p><p class="do"><b>What you do</b>Stand watch, record each sighting and help sort a surface sample.</p><dl><div><dt>Where</dt><dd>Offshore San Diego</dd></div><div><dt>Length</dt><dd>1 day</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Offshore%20debris%20transect">Register interest</a></div></article><article class="scard"><div class="sph" style="background-image:url(ice.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Reef restoration field week</h3><p class="line">Join a reef restoration project run by a partner operator.</p><p class="do"><b>What you do</b>Work alongside the project team under their dive and safety rules.</p><dl><div><dt>Where</dt><dd>Destination being selected</dd></div><div><dt>Length</dt><dd>About 1 week</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Reef%20restoration%20field%20week">Register interest</a></div></article></div>
+      <div class="sgrid wide"><article class="scard"><div class="sph" style="background-image:url(coast.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Coastal water survey</h3><p class="line">Sample the water at local beaches and learn how its quality is measured.</p><p class="do"><b>What you do</b>Collect samples, log conditions and read the results with the lead scientist.</p><dl><div><dt>Where</dt><dd>San Diego coast</dd></div><div><dt>Length</dt><dd>1 day</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Coastal%20water%20survey">Register interest</a></div></article><article class="scard"><div class="sph" style="background-image:url(kelp.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Kelp forest survey dive</h3><p class="line">Dive a kelp forest and record what lives along a survey line.</p><p class="do"><b>What you do</b>Run a transect, count species and enter the data. Divers need a current certification.</p><dl><div><dt>Where</dt><dd>San Diego kelp beds</dd></div><div><dt>Length</dt><dd>1 to 2 days</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Kelp%20forest%20survey%20dive">Register interest</a></div></article><article class="scard"><div class="sph" style="background-image:url(offshore.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Offshore debris transect</h3><p class="line">Head offshore and log floating debris along a fixed course.</p><p class="do"><b>What you do</b>Stand watch, record each sighting and help sort a surface sample.</p><dl><div><dt>Where</dt><dd>Offshore San Diego</dd></div><div><dt>Length</dt><dd>1 day</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Offshore%20debris%20transect">Register interest</a></div></article><article class="scard"><div class="sph" style="background-image:url(reef.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Reef restoration field week</h3><p class="line">Join a reef restoration project run by a partner operator.</p><p class="do"><b>What you do</b>Work alongside the project team under their dive and safety rules.</p><dl><div><dt>Where</dt><dd>Destination being selected</dd></div><div><dt>Length</dt><dd>About 1 week</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Reef%20restoration%20field%20week">Register interest</a></div></article></div>
       <p class="note">These four expeditions are in planning. Dates, prices and group sizes are not set. Register interest and we will write to you when a date opens.</p>
     </div></section>
     <section class="alt"><div class="wrap two">
@@ -888,9 +896,9 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
     <section><div class="wrap">
       <p class="eyebrow">Films</p><h1 class="pt">Films</h1>
       <p class="lede">Short clips of the terrain. Choose one to play it.</p>
-      <div class="player"><video id="pl" controls playsinline preload="metadata" poster="peaks.jpg" src="peaks.mp4"></video><p id="pl-cap">Alpine</p></div>
+      <div class="player"><video id="pl" controls playsinline preload="metadata" poster="peaks_p.jpg" src="peaks.mp4"></video><p id="pl-cap">Alpine</p></div>
       <div class="reel" id="reel"></div>
-      <p class="note">Stock footage from Pexels. It shows the kind of terrain, not 32 North trips.</p>
+      <p class="note">Stock footage from Mixkit and Pexels, stock photos from Unsplash. They show the kind of terrain, not 32 North trips.</p>
       <p style="margin-top:28px"><a class="btn" href="#/trips">Browse trips</a> <a class="btn ghost" href="#/book">Request dates</a></p>
     </div></section>
   </div>
@@ -1351,7 +1359,7 @@ window.scrollTo(0, 0);
 
   /* trip tiles */
   function tile(t){
-    var media = t.film ? '<img src="' + t.film + '.jpg" alt="" loading="lazy">' : '';
+    var media = '<img src="' + t.id + '_m.jpg" alt="" loading="lazy">';
     return '<article class="card" data-tier="' + t.tier + '" data-cat="' + t.cat + '"><a class="ph" href="#/trip/' + t.id + '" style="' + t.bg + '" aria-label="' + t.name + '">' + media + '</a>' +
       '<p class="type ' + t.tier + '">' + t.type + '</p><h3><a href="#/trip/' + t.id + '">' + t.name + '</a></h3><p class="line">' + t.line + '</p>' +
       '<p class="meta">' + t.len + '  /  ' + (t.op === '32 North' ? 'Run by 32 North' : 'Partner operator') + '</p>' +
@@ -1437,8 +1445,8 @@ window.scrollTo(0, 0);
     showMap(t);
     $('t-who').innerHTML = t.op === '32 North' ? (t.id === 'sea' ? '32 North runs this trip under a USCG 100-Ton Master.' : '32 North runs this trip.') : 'A partner operator runs this trip. It has to pass our <a href="#/partners">partner standards</a> before we name it.';
     var th = $('t-hero'); th.innerHTML = '';
-    if (t.film){ th.style.cssText = 'background-image:url(' + t.film + '.jpg)'; var v = document.createElement('video'); v.src = t.film + '.mp4'; v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = !reduce; v.poster = t.film + '.jpg'; th.appendChild(v); }
-    else { th.style.cssText = 'background-image:url(room.jpg);' + t.bg.replace(/background-size:[^;]+;/, 'background-size:cover;'); }
+    if (t.film){ th.style.cssText = 'background-image:url(' + t.film + '_p.jpg)'; var v = document.createElement('video'); v.src = t.film + '.mp4'; v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = !reduce; v.poster = t.film + '_p.jpg'; th.appendChild(v); }
+    else { th.style.cssText = 'background-image:url(' + t.id + '.jpg)'; }
     fill(document.querySelector('[data-grid="more"]'), TRIPS.filter(function(x){ return x.id !== id; }).slice(0, 3));
     document.title = t.name + ' | 32 North Expeditions';
     return true;
@@ -1616,7 +1624,7 @@ window.scrollTo(0, 0);
     b.innerHTML = '<img src="' + f[0] + '.jpg" alt="" loading="lazy"><span>' + f[1] + '</span>';
     b.addEventListener('click', function(){
       all('#reel button').forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      pl.poster = f[0] + '.jpg'; pl.src = f[0] + '.mp4'; $('pl-cap').textContent = f[1]; var pr = pl.play(); if (pr && pr.catch) pr.catch(function(){});
+      pl.poster = f[0] + '_p.jpg'; pl.src = f[0] + '.mp4'; $('pl-cap').textContent = f[1]; var pr = pl.play(); if (pr && pr.catch) pr.catch(function(){});
     });
     $('reel').appendChild(b);
   });

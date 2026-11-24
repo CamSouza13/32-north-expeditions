@@ -736,6 +736,17 @@ section h2{font-size:clamp(30px,3.6vw,54px);max-width:18ch}
 html.live .latrail{display:block}
 @media (max-width:1180px){html.live .latrail{display:none}}
 @media (max-width:860px){.latline{height:auto;margin:36px 0 0;display:grid;gap:18px}.lat-rule{display:none}.stop{position:relative;left:auto;top:auto;width:auto;display:grid;grid-template-columns:72px 1fr;grid-template-rows:auto auto;column-gap:16px;align-items:center}.stop::before,.stop::after{display:none}.stop i,.stop.home i{position:static;width:72px;height:72px;grid-row:1/3}.stop b,.stop span{position:static;width:auto;text-align:left}.stop b{align-self:end}.stop span{align-self:start;margin-top:6px}}
+
+/* v17 forms */
+.wform{display:grid;gap:12px;margin-top:6px}
+.wform label{display:grid;gap:6px;font:500 14px var(--body)}
+.wform input,.wform select,.wform textarea{font:400 16px var(--body);padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fbf9f4;color:var(--ink);width:100%;box-sizing:border-box}
+.way.dark .wform input,.way.dark .wform textarea{background:#1c1f25;border-color:#343943;color:#fff}
+.wform .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.wform .btn{justify-self:start;margin-top:6px}
+.sent{font:600 16px var(--body);padding:14px 16px;border-radius:12px;background:#e6efe9;color:#11120f;margin:0 0 14px}
+.sent.bad{background:#f6e3df}
+.way.dark .sent{background:#22262d;color:#fff}
 </style>
 </head>
 <body>
@@ -952,7 +963,7 @@ html.live .latrail{display:block}
         </div>
         <div class="stepv" data-step="2" hidden>
           <div class="q"><span>Your request</span><div class="msg" id="b-msg"></div></div>
-          <div class="acts"><a class="btn" id="b-mail" href="mailto:cameron@orbitalecology.com">Open email to send</a><button class="btn ghost" id="b-copy" type="button">Copy message</button><p class="addr">Sends to <a href="mailto:cameron@orbitalecology.com">cameron@orbitalecology.com</a></p></div>
+          <p class="sent" id="b-sent" role="status" hidden></p><div class="acts"><button class="btn" id="b-send" type="button">Send request</button><a class="btn ghost" id="b-mail" href="mailto:cameron@orbitalecology.com">Send by email instead</a><button class="btn ghost" id="b-copy" type="button">Copy message</button><p class="addr">Sends to <a href="mailto:cameron@orbitalecology.com">cameron@orbitalecology.com</a></p></div>
         </div>
         <div class="navrow"><button class="btn ghost" type="button" id="b-back" hidden>Back</button><button class="btn" type="button" id="b-next">Continue</button></div>
       </form>
@@ -1036,8 +1047,8 @@ html.live .latrail{display:block}
     <section><div class="wrap">
       <p class="lede">These are working research trips, led by the 32 North science team. Places are limited and they are not sold as tickets. You get aboard one of two ways.</p>
       <div class="ways">
-        <article class="way"><span class="wno">01</span><h3>Apply for a crew place</h3><p>Each expedition holds places for people outside science. Tell us who you are and why you want to be there. No science background needed. The lead teaches each method before you use it.</p><ol><li>Send an application</li><li>The lead scientist reads every one</li><li>Selected crew get dates and a kit list</li></ol><a class="btn" href="mailto:cameron@orbitalecology.com?subject=Application%3A%20science%20expedition%20crew&body=Name%3A%0AWhere%20you%20are%20based%3A%0AWhich%20expedition%3A%0AWhy%20you%20want%20a%20place%3A%0ARelevant%20experience%20or%20certifications%20(none%20required)%3A%0A">Apply</a></article>
-        <article class="way dark"><span class="wno">02</span><h3>Fund an expedition</h3><p>Schools, companies, foundations and private groups can pay for an expedition and set its question with the team. You bring the funding and the people. We bring the scientist, the plan and the methods.</p><ol><li>Send us the question or the place</li><li>The team scopes the field work and the cost</li><li>Your group crews the trip</li></ol><a class="btn inv" href="mailto:cameron@orbitalecology.com?subject=Funding%20a%20science%20expedition&body=Name%20and%20organisation%3A%0AThe%20question%20or%20place%20you%20want%20studied%3A%0AGroup%20size%3A%0ATiming%3A%0ABudget%20range%3A%0A">Fund an expedition</a></article>
+        <article class="way"><span class="wno">01</span><h3>Apply for a crew place</h3><p>Each expedition holds places for people outside science. Tell us who you are and why you want to be there. No science background needed. The lead teaches each method before you use it.</p><ol><li>Send an application</li><li>The lead scientist reads every one</li><li>Selected crew get dates and a kit list</li></ol><form class="wform" data-kind="application" novalidate><label>Full name<input name="name" type="text" autocomplete="name" required></label><label>Email<input name="email" type="email" autocomplete="email" required></label><label>Where you are based<input name="based" type="text"></label><label>Expedition<select name="expedition"><option>Coastal water survey</option><option>Kelp forest survey dive</option><option>Offshore debris transect</option><option>Reef restoration field week</option><option>Any of them</option></select></label><label>Why you want a place<textarea name="why" rows="3" required></textarea></label><label>Relevant experience or certifications (none required)<textarea name="experience" rows="2"></textarea></label><input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn" type="submit">Send application</button><p class="sent" role="status" hidden></p></form></article>
+        <article class="way dark"><span class="wno">02</span><h3>Fund an expedition</h3><p>Schools, companies, foundations and private groups can pay for an expedition and set its question with the team. You bring the funding and the people. We bring the scientist, the plan and the methods.</p><ol><li>Send us the question or the place</li><li>The team scopes the field work and the cost</li><li>Your group crews the trip</li></ol><form class="wform" data-kind="funding" novalidate><label>Full name<input name="name" type="text" autocomplete="name" required></label><label>Email<input name="email" type="email" autocomplete="email" required></label><label>Organisation<input name="org" type="text"></label><label>The question or place you want studied<textarea name="why" rows="3" required></textarea></label><label>Budget range (optional)<input name="budget" type="text"></label><input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn inv" type="submit">Send enquiry</button><p class="sent" role="status" hidden></p></form></article>
       </div>
       <h2 class="allh">Expeditions in planning</h2>
       <div class="sgrid wide"><article class="scard"><div class="sph" style="background-image:url(coast.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Coastal water survey</h3><p class="line">Sample the water at local beaches and learn how its quality is measured.</p><p class="do"><b>What you do</b>Collect samples, log conditions and read the results with the lead scientist.</p><dl><div><dt>Where</dt><dd>San Diego coast</dd></div><div><dt>Length</dt><dd>1 day</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Application:%20Coastal%20water%20survey">Apply</a></div></article><article class="scard"><div class="sph" style="background-image:url(kelp.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Kelp forest survey dive</h3><p class="line">Dive a kelp forest and record what lives along a survey line.</p><p class="do"><b>What you do</b>Run a transect, count species and enter the data. Divers need a current certification.</p><dl><div><dt>Where</dt><dd>San Diego kelp beds</dd></div><div><dt>Length</dt><dd>1 to 2 days</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Application:%20Kelp%20forest%20survey%20dive">Apply</a></div></article><article class="scard"><div class="sph" style="background-image:url(offshore.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Offshore debris transect</h3><p class="line">Head offshore and log floating debris along a fixed course.</p><p class="do"><b>What you do</b>Stand watch, record each sighting and help sort a surface sample.</p><dl><div><dt>Where</dt><dd>Offshore San Diego</dd></div><div><dt>Length</dt><dd>1 day</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Application:%20Offshore%20debris%20transect">Apply</a></div></article><article class="scard"><div class="sph" style="background-image:url(reef.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Reef restoration field week</h3><p class="line">Join a working reef restoration project for a week.</p><p class="do"><b>What you do</b>Work alongside the project team under their dive and safety rules.</p><dl><div><dt>Where</dt><dd>Destination being selected</dd></div><div><dt>Length</dt><dd>About 1 week</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Application:%20Reef%20restoration%20field%20week">Apply</a></div></article></div>
@@ -1730,6 +1741,26 @@ window.scrollTo(0, 0);
     }
     window.addEventListener('scroll', upd, {passive:true}); window.addEventListener('resize', upd); window.addEventListener('hashchange', function(){ setTimeout(upd, 60); }); upd();
   })();
+
+  
+  /* v17 post to the Google Sheet */
+  var INTAKE = 'https://script.google.com/macros/s/AKfycbzfANPHyMBFkCLhp7v4LEt4kc_T2A19L-akiShZixeRO53NDH5C-ZqQYYD2x_CqqUy2/exec';
+  function post(data){ return fetch(INTAKE, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(data)}); }
+  $('b-send').addEventListener('click', function(){
+    var b = $('b-send'), s = $('b-sent'); b.disabled = true; b.textContent = 'Sending';
+    post({kind:'request', trip: st.trip, group: st.n, season: st.when, date: $('b-date').value, name: $('b-name').value.trim(), email: $('b-email').value.trim(), phone: $('b-phone').value.trim(), experience: st.exp, notes: $('b-notes').value.trim()})
+      .then(function(){ s.hidden = false; s.classList.remove('bad'); s.textContent = 'Request sent. We reply by email with dates and a price.'; b.textContent = 'Sent'; })
+      .catch(function(){ s.hidden = false; s.classList.add('bad'); s.textContent = 'That did not send. Use the email button instead.'; b.disabled = false; b.textContent = 'Send request'; });
+  });
+  all('.wform').forEach(function(f){ f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var s = f.querySelector('.sent'), b = f.querySelector('button'), d = {kind: f.getAttribute('data-kind')}, bad = false;
+    all('input,select,textarea').forEach(function(x){ if (!f.contains(x)) return; d[x.name] = x.value.trim(); if (x.required && !x.value.trim()) bad = true; });
+    if (bad || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email || '')){ s.hidden = false; s.classList.add('bad'); s.textContent = 'Fill in your name, a valid email and the main question.'; return; }
+    b.disabled = true; b.textContent = 'Sending';
+    post(d).then(function(){ s.hidden = false; s.classList.remove('bad'); s.textContent = 'Received. The lead scientist reads every one and replies by email.'; b.textContent = 'Sent'; })
+      .catch(function(){ s.hidden = false; s.classList.add('bad'); s.textContent = 'That did not send. Email us instead.'; b.disabled = false; b.textContent = 'Try again'; });
+  }); });
 
   window.addEventListener('hashchange', route);
   $('menu').addEventListener('click', function(){ var o = top.classList.toggle('open'); $('menu').setAttribute('aria-expanded', o ? 'true' : 'false'); });

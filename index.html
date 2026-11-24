@@ -611,6 +611,47 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
 .band,.phead{min-height:clamp(260px,32vw,440px)}
 .band::before{background:linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.05) 70%),linear-gradient(0deg,rgba(0,0,0,.35),rgba(0,0,0,0) 45%)}
 .phead::before{background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.68))}
+/* v11 doors, finder, ways, shop */
+.doors{padding-top:clamp(34px,4vw,60px);padding-bottom:clamp(20px,3vw,40px)}
+.doorrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,22px);margin-top:28px}
+.cat.door{aspect-ratio:4/5;border-radius:26px}
+.cat.door::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 35%,rgba(0,0,0,.78))}
+.cat.door em{position:absolute;left:20px;top:20px;font:600 13px var(--body);font-style:normal;background:#fff;color:#000;padding:6px 12px;border-radius:999px}
+.cat.door b{font:700 clamp(26px,2.6vw,38px)/1.02 var(--head);letter-spacing:-.02em}
+.cat.door i{font-size:16px;margin-top:10px;opacity:1}
+.cat.door:hover{transform:translateY(-6px)}
+.lede.sm{font-size:17px;margin-top:14px;opacity:.86}
+.headrow .lede{max-width:60ch;margin-top:12px}
+.finder{margin-top:26px}
+.fq{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:10px 24px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.fq > span{font:600 19px/1.2 var(--head);color:var(--ink)}
+.fo{display:flex;flex-wrap:wrap;gap:8px}
+.fo button,.freset{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 18px;font:500 15px var(--body);cursor:pointer;color:var(--ink);min-height:44px}
+.fo button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.fbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:18px}
+.fcount{font:600 17px var(--body);color:var(--ink);margin:0}
+.fres{margin-top:22px}
+@media (min-width:861px){.view .fres{display:grid !important;grid-template-columns:repeat(4,minmax(0,1fr)) !important;overflow:visible !important;gap:22px !important;padding-bottom:0 !important}.view .fres .card{margin-top:0 !important;transform:none !important;flex-basis:auto !important;width:auto !important}}
+.fres .none{grid-column:1/-1;padding:28px;border:1px solid var(--line);border-radius:var(--r);background:#fff}
+.findwrap{margin-top:26px;border:1px solid var(--line);border-radius:var(--r);padding:6px 22px 22px;background:var(--soft)}
+.findwrap summary{font:600 19px var(--head);padding:14px 0;cursor:pointer}
+.allh{margin-top:clamp(36px,4vw,56px)}
+.ways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.2vw,28px);margin-top:32px}
+.way{position:relative;border:1px solid var(--line);border-radius:26px;padding:clamp(24px,3vw,40px);background:#fff;display:flex;flex-direction:column;gap:14px;box-shadow:0 24px 50px -34px rgba(0,0,0,.4)}
+.way.dark{background:#12151a;border-color:#262b33;color:#fff}
+.way .wno{font:400 13px var(--mono);color:var(--blue)}
+.way.dark .wno{color:#8fb8ff}
+.way h3{font:700 clamp(26px,2.6vw,36px)/1.05 var(--head);letter-spacing:-.02em;color:inherit}
+.way ol{margin:4px 0 8px;padding-left:20px;display:grid;gap:6px}
+.way .btn{align-self:flex-start;margin-top:auto}
+.kitgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,3vw,40px) clamp(16px,2.2vw,28px);margin-top:34px}
+.kit-ph{aspect-ratio:4/3;border-radius:22px;background:#12151a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;margin-bottom:14px}
+.kit-ph b{font:800 clamp(40px,5vw,68px)/1 var(--head);letter-spacing:.02em}
+.kit-ph i{font:600 13px var(--body);font-style:normal;letter-spacing:.24em;text-transform:uppercase;opacity:.8}
+.kit h3{font:600 22px/1.2 var(--head);color:var(--ink);margin:4px 0 6px}
+.pro.haspic{display:grid;grid-template-columns:minmax(0,38%) 1fr}
+.pro.haspic .pro-pic{grid-row:1/3;background:#000 center/cover no-repeat;min-height:320px}
+@media (max-width:860px){.doorrow,.ways,.kitgrid{grid-template-columns:1fr}.cat.door{aspect-ratio:16/11}.fq{grid-template-columns:1fr}.pro.haspic{grid-template-columns:1fr}.pro.haspic .pro-pic{grid-row:auto;aspect-ratio:4/3}}
 </style>
 </head>
 <body>
@@ -632,6 +673,7 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
     <a href="#/science">Science</a>
     <a href="#/team">Team</a>
     <a href="#/films">Films</a>
+    <a href="#/shop">Shop</a>
     <a href="#/partners">Partners</a>
     <a href="#/faq">Questions</a>
     <a class="cta" href="#/book">Book</a>
@@ -674,7 +716,7 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
       <div>
         <p class="eyebrow">The 32 North science team</p>
         <h2>Our pros are field scientists</h2>
-        <p class="lede">Surf brands have team riders. Ski brands have athletes. Ours do research at sea, underwater and in the mountains, and they plan the trips you book.</p>
+        <p class="lede">Surf brands have team riders. Ski brands have athletes. Ours hold captain’s licences and research posts. They work at sea, underwater and in the mountains, and they plan every trip you book here.</p><p class="lede sm">Research trips are crewed by scientists, students and the people who fund them. The public rarely gets aboard. This team opens places on its own field work.</p>
         <div class="btnrow"><a class="btn inv" href="#/team">Meet the team</a><a class="btn line" href="#/science">Science expeditions</a></div>
       </div>
       <a href="#/team" style="text-decoration:none"><article class="pro">
@@ -685,35 +727,49 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
             <div><dt>Licence</dt><dd>USCG 100-Ton Master</dd></div>
             <div><dt>Diving</dt><dd>AAUS Scientific Diver</dd></div>
             <div><dt>Past field work</dt><dd>Coral restoration in the Florida Keys. Marine debris research on Oʻahu.</dd></div>
+            <div><dt>Education</dt><dd>M.A. Data Science, Harvard University. B.S. Marine Biology, Unity College.</dd></div>
+            <div><dt>Teaches</dt><dd>Applied environmental data science, Unity Environmental University</dd></div>
           </dl>
         </article></a>
     </div>
   </section>
-  <section class="cats">
+  <section class="doors">
     <div class="wrap">
-      <div class="catrow">
-        <a class="cat" href="#/trips/Sea" style="background-image:url(sea.jpg)"><span><b>Sea</b><i>Surf, dive, paddle, sail</i></span></a>
-        <a class="cat" href="#/trips/Land" style="background-image:url(trail.jpg)"><span><b>Land</b><i>Climb, hike, ride</i></span></a>
-        <a class="cat" href="#/trips/Snow" style="background-image:url(ski.jpg)"><span><b>Snow and ice</b><i>Ski, Everest, Arctic</i></span></a>
-        <a class="cat" href="#/trips/local" style="background-image:url(local.jpg)"><span><b>Local trips</b><i>From San Diego</i></span></a>
+      <div class="headrow"><div><p class="eyebrow">Three ways to go</p><h2>Pick your door</h2></div></div>
+      <div class="doorrow">
+        <a class="cat door" href="#/science" style="background-image:url(kelp.jpg)"><em>By application or funding</em><span><b>Science expeditions</b><i>Crew a research trip led by the science team.</i></span></a>
+        <a class="cat door" href="#/trips/exp" style="background-image:url(everest.jpg)"><em>Booked through 32 North</em><span><b>Partner expeditions</b><i>Everest, the Arctic, British Columbia, Costa Rica.</i></span></a>
+        <a class="cat door" href="#/trips/local" style="background-image:url(local.jpg)"><em>Run by 32 North</em><span><b>San Diego trips</b><i>Seven trips. A day or a weekend.</i></span></a>
+      </div>
+    </div>
+  </section>
+  <section class="alt findsec">
+    <div class="wrap">
+      <div class="headrow"><div><p class="eyebrow">Trip finder</p><h2>Three questions. Your trips.</h2></div><a class="btn ghost" href="#/trips">All trips</a></div>
+      <div class="finder" data-finder>
+        <div class="fq"><span>How long do you have?</span><div class="fo" data-k="len"><button type="button" data-v="day">A day</button><button type="button" data-v="weekend">A weekend</button><button type="button" data-v="week">A week or more</button></div></div>
+        <div class="fq"><span>Where?</span><div class="fo" data-k="where"><button type="button" data-v="sd">San Diego</button><button type="button" data-v="abroad">Abroad</button></div></div>
+        <div class="fq"><span>What?</span><div class="fo" data-k="what"><button type="button" data-v="Sea">Water</button><button type="button" data-v="Land">Rock and trail</button><button type="button" data-v="Snow">Snow and ice</button><button type="button" data-v="sci">Field science</button></div></div>
+        <div class="fbar"><p class="fcount" aria-live="polite"></p><button type="button" class="freset">Clear</button></div>
+        <div class="grid fres"></div>
       </div>
     </div>
   </section>
   <section>
     <div class="wrap">
-      <div class="headrow"><div><p class="eyebrow">Science expeditions</p><h2>Work a field day with the team</h2></div><a class="btn ghost" href="#/science">All science expeditions</a></div>
+      <div class="headrow"><div><p class="eyebrow">Science expeditions</p><h2>Earn a place on the field crew</h2><p class="lede">Real surveys, led by the science team. Two ways aboard: apply for a crew place, or fund an expedition and bring your own question.</p></div><div class="tools"><a class="btn" href="#/science">Apply</a><a class="btn ghost" href="#/science">Fund an expedition</a></div></div>
       <div class="feat"><div class="feat-img" id="feat-img"><i style="background-image:url(coast.jpg)" class="on"></i><i style="background-image:url(kelp.jpg)"></i><i style="background-image:url(offshore.jpg)"></i><i style="background-image:url(reef.jpg)"></i><span class="pill plan">In planning</span><span class="coord">32°43′N</span></div><div class="feat-list"><a href="#/science" data-k="0" class="on"><small>01</small><b>Coastal water survey</b><em>Sample the water at local beaches and learn how its quality is measured.</em></a><a href="#/science" data-k="1"><small>02</small><b>Kelp forest survey dive</b><em>Dive a kelp forest and record what lives along a survey line.</em></a><a href="#/science" data-k="2"><small>03</small><b>Offshore debris transect</b><em>Head offshore and log floating debris along a fixed course.</em></a><a href="#/science" data-k="3"><small>04</small><b>Reef restoration field week</b><em>Join a reef restoration project run by a partner operator.</em></a></div></div>
     </div>
   </section>
   <section id="activities" class="alt">
     <div class="wrap">
-      <div class="headrow"><div><p class="eyebrow">Partner expeditions</p><h2>International expeditions</h2></div><a class="btn ghost" href="#/trips">All trips</a></div>
+      <div class="headrow"><div><p class="eyebrow">Partner expeditions</p><h2>The big trips, run by operators we vet</h2><p class="lede">We check licence, insurance and guide qualifications before a trip goes on this site. You book through 32 North, and we tell you who runs it.</p></div><a class="btn ghost" href="#/trips">All trips</a></div>
       <div class="grid big" data-grid="exp"></div>
     </div>
   </section>
   <section>
     <div class="wrap">
-      <div class="headrow"><div><p class="eyebrow">Local trips</p><h2>A day or a weekend from San Diego</h2></div><a class="btn ghost" href="#/trips">See all seven</a></div>
+      <div class="headrow"><div><p class="eyebrow">San Diego trips</p><h2>A day or a weekend from San Diego</h2></div><a class="btn ghost" href="#/trips">See all seven</a></div>
       <div class="grid" data-grid="local"></div>
     </div>
   </section>
@@ -740,9 +796,17 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
     <div class="phead" style="background-image:url(peaks.jpg)"><div class="wrap"><p>Trips</p><h1>All trips</h1></div></div>
     <section><div class="wrap">
       
-      <p class="lede">32 North runs the seven local trips from San Diego. Partner operators run the international expeditions.</p>
+      <p class="lede">32 North runs the seven San Diego trips. Partner operators run the international expeditions. The science team leads the science expeditions.</p>
+      <details class="findwrap" open><summary>Trip finder</summary><div class="finder" data-finder>
+        <div class="fq"><span>How long do you have?</span><div class="fo" data-k="len"><button type="button" data-v="day">A day</button><button type="button" data-v="weekend">A weekend</button><button type="button" data-v="week">A week or more</button></div></div>
+        <div class="fq"><span>Where?</span><div class="fo" data-k="where"><button type="button" data-v="sd">San Diego</button><button type="button" data-v="abroad">Abroad</button></div></div>
+        <div class="fq"><span>What?</span><div class="fo" data-k="what"><button type="button" data-v="Sea">Water</button><button type="button" data-v="Land">Rock and trail</button><button type="button" data-v="Snow">Snow and ice</button><button type="button" data-v="sci">Field science</button></div></div>
+        <div class="fbar"><p class="fcount" aria-live="polite"></p><button type="button" class="freset">Clear</button></div>
+        <div class="grid fres"></div>
+      </div></details>
+      <h2 class="allh">Every trip</h2>
       <div class="filters" role="group" aria-label="Filter trips">
-        <button type="button" data-f="all" aria-pressed="true">All</button><button type="button" data-f="local" aria-pressed="false">Local trips</button><button type="button" data-f="exp" aria-pressed="false">Partner expeditions</button>
+        <button type="button" data-f="all" aria-pressed="true">All</button><button type="button" data-f="local" aria-pressed="false">San Diego trips</button><button type="button" data-f="exp" aria-pressed="false">Partner expeditions</button>
         <button type="button" data-f="Sea" aria-pressed="false">Sea</button><button type="button" data-f="Land" aria-pressed="false">Land</button><button type="button" data-f="Snow" aria-pressed="false">Snow and ice</button>
       </div>
       <div class="grid" data-grid="all"></div>
@@ -848,7 +912,7 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
   <div class="view" data-view="team">
     <div class="phead" style="background-image:url(sea.jpg)"><div class="wrap"><p>Science team</p><h1>Our pros are field scientists</h1></div></div>
     <section><div class="wrap">
-      <p class="lede">Other outdoor companies build around sponsored athletes. 32 North builds around scientists who sail, dive, climb and ski for their work. They set the standard on our trips, and guests learn from them in the field.</p>
+      <p class="lede">Other outdoor companies build around sponsored athletes. 32 North builds around scientists who sail, dive, climb and ski for their work. They hold the licences, run the surveys and set the standard on every trip.</p><p class="lede sm">You do not usually get to work beside people like this. Research crews are closed to the public. Ours has places you can apply for.</p>
       <div style="margin-top:34px"><article class="pro">
           <div class="pro-id"><span class="pro-no">01</span><p class="type">Lead scientist and captain</p><h3>Cameron Souza</h3><p class="pro-co">32°42′57″N 117°09′40″W · San Diego</p></div>
           <dl class="stats">
@@ -857,6 +921,8 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
             <div><dt>Licence</dt><dd>USCG 100-Ton Master</dd></div>
             <div><dt>Diving</dt><dd>AAUS Scientific Diver</dd></div>
             <div><dt>Past field work</dt><dd>Coral restoration in the Florida Keys. Marine debris research on Oʻahu.</dd></div>
+            <div><dt>Education</dt><dd>M.A. Data Science, Harvard University. B.S. Marine Biology, Unity College.</dd></div>
+            <div><dt>Teaches</dt><dd>Applied environmental data science, Unity Environmental University</dd></div>
           </dl>
         </article></div>
       <p style="margin-top:28px"><a class="btn" href="#/science">Science expeditions</a> <a class="btn ghost" href="#/trips">Browse trips</a></p>
@@ -878,21 +944,36 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
         <div><h3>Explain it</h3><p>Guests leave knowing how the place works: the water, the rock, the snow and what lives there.</p></div>
       </div>
     </div></section>
-    <a class="band" href="#/science" style="background-image:url(surf.jpg)"><span><b>Spend a field day with the team.</b><i>Science expeditions</i></span></a>
+    <a class="band" href="#/science" style="background-image:url(surf.jpg)"><span><b>Earn a place on the field crew.</b><i>Apply</i></span></a>
   </div>
 
   <div class="view" data-view="science">
-    <div class="phead" style="background-image:url(surf.jpg)"><div class="wrap"><p>Science expeditions</p><h1>Work a field day with the team</h1></div></div>
+    <div class="phead" style="background-image:url(offshore.jpg)"><div class="wrap"><p>Science expeditions</p><h1>Crew a research trip</h1></div></div>
     <section><div class="wrap">
-      <p class="lede">On a science expedition you do the field work. A team scientist leads, and you sample, survey and record alongside them.</p>
-      <div class="sgrid wide"><article class="scard"><div class="sph" style="background-image:url(coast.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Coastal water survey</h3><p class="line">Sample the water at local beaches and learn how its quality is measured.</p><p class="do"><b>What you do</b>Collect samples, log conditions and read the results with the lead scientist.</p><dl><div><dt>Where</dt><dd>San Diego coast</dd></div><div><dt>Length</dt><dd>1 day</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Coastal%20water%20survey">Register interest</a></div></article><article class="scard"><div class="sph" style="background-image:url(kelp.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Kelp forest survey dive</h3><p class="line">Dive a kelp forest and record what lives along a survey line.</p><p class="do"><b>What you do</b>Run a transect, count species and enter the data. Divers need a current certification.</p><dl><div><dt>Where</dt><dd>San Diego kelp beds</dd></div><div><dt>Length</dt><dd>1 to 2 days</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Kelp%20forest%20survey%20dive">Register interest</a></div></article><article class="scard"><div class="sph" style="background-image:url(offshore.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Offshore debris transect</h3><p class="line">Head offshore and log floating debris along a fixed course.</p><p class="do"><b>What you do</b>Stand watch, record each sighting and help sort a surface sample.</p><dl><div><dt>Where</dt><dd>Offshore San Diego</dd></div><div><dt>Length</dt><dd>1 day</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Offshore%20debris%20transect">Register interest</a></div></article><article class="scard"><div class="sph" style="background-image:url(reef.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Reef restoration field week</h3><p class="line">Join a reef restoration project run by a partner operator.</p><p class="do"><b>What you do</b>Work alongside the project team under their dive and safety rules.</p><dl><div><dt>Where</dt><dd>Destination being selected</dd></div><div><dt>Length</dt><dd>About 1 week</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Science%20expedition:%20Reef%20restoration%20field%20week">Register interest</a></div></article></div>
-      <p class="note">These four expeditions are in planning. Dates, prices and group sizes are not set. Register interest and we will write to you when a date opens.</p>
+      <p class="lede">These are working research trips, led by the 32 North science team. Places are limited and they are not sold as tickets. You get aboard one of two ways.</p>
+      <div class="ways">
+        <article class="way"><span class="wno">01</span><h3>Apply for a crew place</h3><p>Each expedition holds places for people outside science. Tell us who you are and why you want to be there. No science background needed. The lead teaches each method before you use it.</p><ol><li>Send an application</li><li>The lead scientist reads every one</li><li>Selected crew get dates and a kit list</li></ol><a class="btn" href="mailto:cameron@orbitalecology.com?subject=Application%3A%20science%20expedition%20crew&body=Name%3A%0AWhere%20you%20are%20based%3A%0AWhich%20expedition%3A%0AWhy%20you%20want%20a%20place%3A%0ARelevant%20experience%20or%20certifications%20(none%20required)%3A%0A">Apply</a></article>
+        <article class="way dark"><span class="wno">02</span><h3>Fund an expedition</h3><p>Schools, companies, foundations and private groups can pay for an expedition and set its question with the team. You bring the funding and the people. We bring the scientist, the plan and the methods.</p><ol><li>Send us the question or the place</li><li>The team scopes the field work and the cost</li><li>Your group crews the trip</li></ol><a class="btn inv" href="mailto:cameron@orbitalecology.com?subject=Funding%20a%20science%20expedition&body=Name%20and%20organisation%3A%0AThe%20question%20or%20place%20you%20want%20studied%3A%0AGroup%20size%3A%0ATiming%3A%0ABudget%20range%3A%0A">Fund an expedition</a></article>
+      </div>
+      <h2 class="allh">Expeditions in planning</h2>
+      <div class="sgrid wide"><article class="scard"><div class="sph" style="background-image:url(coast.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Coastal water survey</h3><p class="line">Sample the water at local beaches and learn how its quality is measured.</p><p class="do"><b>What you do</b>Collect samples, log conditions and read the results with the lead scientist.</p><dl><div><dt>Where</dt><dd>San Diego coast</dd></div><div><dt>Length</dt><dd>1 day</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Application:%20Coastal%20water%20survey">Apply</a></div></article><article class="scard"><div class="sph" style="background-image:url(kelp.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Kelp forest survey dive</h3><p class="line">Dive a kelp forest and record what lives along a survey line.</p><p class="do"><b>What you do</b>Run a transect, count species and enter the data. Divers need a current certification.</p><dl><div><dt>Where</dt><dd>San Diego kelp beds</dd></div><div><dt>Length</dt><dd>1 to 2 days</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Application:%20Kelp%20forest%20survey%20dive">Apply</a></div></article><article class="scard"><div class="sph" style="background-image:url(offshore.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Offshore debris transect</h3><p class="line">Head offshore and log floating debris along a fixed course.</p><p class="do"><b>What you do</b>Stand watch, record each sighting and help sort a surface sample.</p><dl><div><dt>Where</dt><dd>Offshore San Diego</dd></div><div><dt>Length</dt><dd>1 day</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Application:%20Offshore%20debris%20transect">Apply</a></div></article><article class="scard"><div class="sph" style="background-image:url(reef.jpg)"><span class="pill plan">In planning</span></div><p class="type">Science expedition</p><h3>Reef restoration field week</h3><p class="line">Join a reef restoration project run by a partner operator.</p><p class="do"><b>What you do</b>Work alongside the project team under their dive and safety rules.</p><dl><div><dt>Where</dt><dd>Destination being selected</dd></div><div><dt>Length</dt><dd>About 1 week</dd></div><div><dt>Lead</dt><dd>32 North science team</dd></div></dl><div class="row"><a class="go" href="mailto:cameron@orbitalecology.com?subject=Application:%20Reef%20restoration%20field%20week">Apply</a></div></article></div>
+      <p class="note">These four expeditions are in planning. Dates, prices and group sizes are not set. Apply now and we will write to you when a date opens.</p>
     </div></section>
     <section class="alt"><div class="wrap two">
-      <div><p class="eyebrow">Who leads</p><h2>The science team</h2><p class="lede">Each science expedition has a named lead from the 32 North team.</p><p style="margin-top:20px"><a class="btn" href="#/team">Meet the team</a></p></div>
+      <div><p class="eyebrow">Who leads</p><h2>The science team</h2><p class="lede">Each science expedition has a named lead from the 32 North team. The lead picks the crew.</p><p style="margin-top:20px"><a class="btn" href="#/team">Meet the team</a></p></div>
       <ul class="checks"><li>No science background needed</li><li>The lead teaches each method before you use it</li><li>Dive expeditions need a current certification</li><li>Partner-run expeditions follow our partner standards</li></ul>
     </div></section>
     <a class="band" href="#/trips" style="background-image:url(trail.jpg)"><span><b>Looking for a surf, climb or ski trip?</b><i>Browse trips</i></span></a>
+  </div>
+
+  <div class="view" data-view="shop">
+    <div class="phead" style="background-image:url(room.jpg)"><div class="wrap"><p>Shop</p><h1>32°N field kit</h1></div></div>
+    <section><div class="wrap">
+      <p class="lede">A short range built on the coordinate. One colour, stitched where it can be. Made to order, so nothing sits in a warehouse.</p>
+      <div class="kitgrid"><article class="kit"><div class="kit-ph"><b>32°N</b><i>Cap</i></div><p class="type">Planned</p><h3>Five-panel cap</h3><p>32°N in raised embroidery, front and centre.</p></article><article class="kit"><div class="kit-ph"><b>32°N</b><i>Beanie</i></div><p class="type">Planned</p><h3>Cuffed beanie</h3><p>Small 32°N on the cuff. For dawn patrol and offshore mornings.</p></article><article class="kit"><div class="kit-ph"><b>32°N</b><i>Hoodie</i></div><p class="type">Planned</p><h3>Heavyweight hoodie</h3><p>Chest mark in front. The latitude line and trip names on the back.</p></article><article class="kit"><div class="kit-ph"><b>32°N</b><i>Mug</i></div><p class="type">Planned</p><h3>Enamel camp mug</h3><p>The gear room sign lettering. Made for a deck or a tailgate.</p></article><article class="kit"><div class="kit-ph"><b>32°N</b><i>Dry bag</i></div><p class="type">Planned</p><h3>Roll-top dry bag</h3><p>Coordinate and wordmark. Goes on every water trip.</p></article><article class="kit"><div class="kit-ph"><b>32°N</b><i>Patch</i></div><p class="type">Planned</p><h3>Trip patches</h3><p>One per trip. You get it by doing the trip.</p></article></div>
+      <p class="note">The shop is not open yet. These six pieces are planned and no prices are set.</p>
+      <p style="margin-top:22px"><a class="btn" href="mailto:cameron@orbitalecology.com?subject=32%C2%B0N%20field%20kit%3A%20tell%20me%20when%20it%20opens">Tell me when it opens</a></p>
+    </div></section>
   </div>
 
   <div class="view" data-view="films">
@@ -951,9 +1032,9 @@ footer h4{font:600 14px var(--body);letter-spacing:0;text-transform:none}
 <footer>
   <div class="wrap fcols">
     <div><a class="logo" href="#/"><span>32 North</span></a><p>San Diego, California<br>32°42′57″N 117°09′40″W</p></div>
-    <div><h4>Trips</h4><a href="#/trips">All trips</a><a href="#/trip/ski">British Columbia skiing</a><a href="#/trip/ice">Arctic Circle</a><a href="#/trip/everest">Mount Everest</a><a href="#/trip/costa">Costa Rica surfing</a><a href="#/trip/sea">Offshore days</a></div>
+    <div><h4>Trips</h4><a href="#/trips">All trips</a><a href="#/trips">Trip finder</a><a href="#/trips/exp">Partner expeditions</a><a href="#/trips/local">San Diego trips</a><a href="#/trip/ski">British Columbia skiing</a><a href="#/trip/ice">Arctic Circle</a><a href="#/trip/everest">Mount Everest</a><a href="#/trip/costa">Costa Rica surfing</a><a href="#/trip/sea">Offshore days</a></div>
     <div><h4>Book</h4><a href="#/book">Request dates</a><a href="#/faq">Questions</a><a href="mailto:cameron@orbitalecology.com">Email us</a></div>
-    <div><h4>Company</h4><a href="#/team">Science team</a><a href="#/science">Science expeditions</a><a href="#/about">About</a><a href="#/partners">Partner standards</a><a href="#/films">Films</a><button type="button" id="replay">Replay the intro</button></div>
+    <div><h4>Company</h4><a href="#/team">Science team</a><a href="#/science">Science expeditions</a><a href="#/about">About</a><a href="#/partners">Partner standards</a><a href="#/films">Films</a><a href="#/shop">Shop</a><button type="button" id="replay">Replay the intro</button></div>
   </div>
   <div class="wrap fine2">© 2026 32 North Expeditions</div>
 </footer>
@@ -1510,6 +1591,49 @@ window.scrollTo(0, 0);
       }
     }
   })();
+  
+  /* v11 trip finder */
+  var SCI = [
+    {name:'Coastal water survey', img:'coast', len:['day'], where:'sd', line:'Sample the water at local beaches and learn how its quality is measured.'},
+    {name:'Kelp forest survey dive', img:'kelp', len:['day','weekend'], where:'sd', line:'Dive a kelp forest and record what lives along a survey line.'},
+    {name:'Offshore debris transect', img:'offshore', len:['day'], where:'sd', line:'Head offshore and log floating debris along a fixed course.'},
+    {name:'Reef restoration field week', img:'reef', len:['week'], where:'abroad', line:'Join a reef restoration project run by a partner operator.'}
+  ];
+  function lenOf(t){ return t.len === 'Multi-day' ? ['week'] : t.len === 'Weekend' ? ['weekend'] : t.len === '1 to 2 days' ? ['day','weekend'] : ['day']; }
+  function sciTile(s){
+    return '<article class="card" data-tier="sci"><a class="ph" href="#/science" aria-label="' + s.name + '"><img src="' + s.img + '_m.jpg" alt="" loading="lazy"></a>' +
+      '<p class="type">Science expedition</p><h3><a href="#/science">' + s.name + '</a></h3><p class="line">' + s.line + '</p>' +
+      '<p class="meta">By application  /  Led by the science team</p><div class="row"><a class="go" href="#/science">Apply</a><a href="#/science">View ›</a></div></article>';
+  }
+  all('[data-finder]').forEach(function(root){
+    var pick = {len:null, where:null, what:null}, res = root.querySelector('.fres'), count = root.querySelector('.fcount');
+    function draw(){
+      var any = pick.len || pick.where || pick.what, out = [];
+      if (pick.what !== 'sci') TRIPS.forEach(function(t){
+        if (pick.len && lenOf(t).indexOf(pick.len) < 0) return;
+        if (pick.where && (pick.where === 'sd') !== (t.tier === 'local')) return;
+        if (pick.what && t.cat !== pick.what) return;
+        out.push(tile(t));
+      });
+      if (!pick.what || pick.what === 'sci') SCI.forEach(function(s){
+        if (pick.len && s.len.indexOf(pick.len) < 0) return;
+        if (pick.where && s.where !== pick.where) return;
+        out.push(sciTile(s));
+      });
+      if (!any){ res.innerHTML = ''; count.textContent = 'Answer any question to see trips.'; return; }
+      count.textContent = out.length ? out.length + (out.length === 1 ? ' trip fits' : ' trips fit') : 'Nothing fits yet';
+      res.innerHTML = out.length ? out.join('') : '<div class="none"><p>No trip matches those answers yet. Tell us what you are after and we will look for it.</p><p style="margin-top:14px"><a class="btn" href="#/book">Ask us</a></p></div>';
+    }
+    all('.fo button').forEach(function(b){ if (!root.contains(b)) return; b.setAttribute('aria-pressed', 'false'); b.addEventListener('click', function(){
+      var k = b.parentNode.getAttribute('data-k'), v = b.getAttribute('data-v');
+      pick[k] = pick[k] === v ? null : v;
+      Array.prototype.forEach.call(b.parentNode.children, function(x){ x.setAttribute('aria-pressed', pick[k] === x.getAttribute('data-v') ? 'true' : 'false'); });
+      draw();
+    }); });
+    root.querySelector('.freset').addEventListener('click', function(){ pick = {len:null, where:null, what:null}; all('.fo button').forEach(function(x){ if (root.contains(x)) x.setAttribute('aria-pressed', 'false'); }); draw(); });
+    draw();
+  });
+
   window.addEventListener('hashchange', route);
   $('menu').addEventListener('click', function(){ var o = top.classList.toggle('open'); $('menu').setAttribute('aria-expanded', o ? 'true' : 'false'); });
 

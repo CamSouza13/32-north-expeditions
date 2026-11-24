@@ -748,6 +748,55 @@ html.live .latrail{display:block}
 .sent.bad{background:#f6e3df}
 .way.dark .sent{background:#22262d;color:#fff}
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style id="v20">
+/* shared: strip decoration that carries no information */
+body{background-image:none!important}
+body::after,.alt::before,.alt::after,section::before{display:none!important}
+.alt,section,.teamband,footer,.way.dark,.kit-ph{background-image:none!important}
+.eyebrow::before,.phead p::before{content:none!important}
+.headrow .eyebrow,.stx .eyebrow,.two>div>.eyebrow,.teamband .eyebrow{display:none!important}
+[data-view="trip"] .eyebrow{display:block!important}
+.marq{display:none!important}
+.feat-list a small,.way .wno,.pro-no,.slot .no{display:none!important}
+.stx .checks li::before{content:""!important;width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.35;margin-top:.6em}
+.eyebrow,.phead p,.card .type,.scard .type,.kit .type,.cat.door em,.pill,.stop span,.pro .type,.pro-co,.feat-img .coord,.stats dt,.person .role,.slot .role,.fcols h4,.sub,.checkgrid h3,.status th,.pk-tx .type,.pn a small,.steps div h3{font-family:var(--body)!important;text-transform:none!important;letter-spacing:0!important}
+h1,h2,h3,.cap h1,h1.pt,.teamband h2,.pro h3{text-transform:none!important}
+section{padding-top:112px!important;padding-bottom:112px!important}
+.headrow{margin-bottom:44px!important}
+.cat.door em{background:none!important;border:0!important;padding:0!important;font-size:14px!important;opacity:.9}
+.feat-img .coord{display:none!important}
+*{box-shadow:none!important}
+@media(max-width:800px){section{padding-top:72px!important;padding-bottom:72px!important}}
+.feat-list a{grid-template-columns:1fr!important}
+.cat.door em{color:#fff!important;font-weight:500!important;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.cap p{font-family:var(--body)!important;text-transform:none!important;letter-spacing:0!important;font-size:15px!important}
+.cap a.btn:not(.ghost){background:#fff!important;border-color:#fff!important;color:#000!important}
+.cap a:not(.btn){background:none!important;border:0!important;border-bottom:1px solid #fff!important;border-radius:0!important;color:#fff!important;padding:0 0 3px!important;font:500 16px var(--body)!important;text-transform:none!important;letter-spacing:0!important}
+.cap a.btn~a{background:transparent!important;border:0!important;border-bottom:1px solid #fff!important;border-radius:0!important;color:#fff!important;padding:0 0 3px!important;margin-left:14px}
+:root{--bg:#fff!important;--soft:#f5f5f4!important;--line:#e7e7e5!important;--text:#3a3a38!important;--ink:#0a0a0a!important;--blue:#e8501a!important;--exp:#e8501a!important;--head:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif!important;--body:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif!important;--r:20px!important;--r-s:14px!important}
+body{background:#fff!important;color:#3a3a38}
+.alt{background:#fff!important}
+h1,h2,h3,.cap h1{font-family:var(--head)!important;font-stretch:100%!important;font-weight:600!important;letter-spacing:-.035em!important}
+h2{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.02!important;max-width:16ch}
+.cap h1{font-size:clamp(40px,5.2vw,76px)!important;line-height:.98!important;font-weight:600!important;max-width:14ch}
+.lede{font-size:19px!important;line-height:1.5!important;color:#4a4a47!important;max-width:52ch}
+.btn{border-radius:999px!important;padding:13px 22px!important;font-weight:600!important}
+.btn:not(.ghost){background:#e8501a!important;border-color:#e8501a!important;color:#fff!important}
+.btn.ghost{border-color:#0a0a0a!important;color:#0a0a0a!important;background:transparent!important}
+.fo button,.filters button{border-radius:999px!important}
+.cap a.btn:first-of-type{background:#e8501a!important;border-color:#e8501a!important;color:#fff!important}
+.opts button,.opts label,.opts>*{border-radius:999px!important}
+.count button{border-radius:50%!important}
+.form input,.form textarea,.form select,.wform input,.wform textarea,.wform select{border-radius:14px!important}
+.prog{border-radius:999px!important;overflow:hidden}
+.prog li{border-radius:999px!important}
+.form,.msg{border-radius:20px!important}
+.findwrap{background:#f5f5f4!important;border:0!important;border-radius:20px!important}
+.wform input,.wform textarea,.wform select{background:#fff!important}
+.way.dark .wform input,.way.dark .wform textarea,.way.dark .wform select{background:#1c1c1c!important}
+.sent{background:#f5f5f4!important}
+</style>
 </head>
 <body>
 
@@ -945,7 +994,7 @@ html.live .latrail{display:block}
         <p class="eyebrow">Book</p><h1 class="pt">Request a booking</h1>
         <p class="lede">Three short steps. We reply with dates, the price and your ground team. You decide after that.</p>
         <ol class="prog" id="prog"><li class="on">Trip</li><li>Your details</li><li>Review</li></ol>
-        <ul class="checks" style="margin-top:28px"><li>No payment is taken on this site</li><li>Requesting dates carries no obligation</li><li>The form prepares an email that you send from your own account</li></ul>
+        <ul class="checks" style="margin-top:28px"><li>No payment is taken on this site</li><li>Requesting dates carries no obligation</li><li>Your request goes straight to the 32 North team</li></ul>
       </div>
       <form class="form" id="bk" novalidate>
         <div class="stepv" data-step="0">

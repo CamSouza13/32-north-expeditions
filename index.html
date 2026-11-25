@@ -838,6 +838,14 @@ h2{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.02!important;max-wid
 .listband p{margin:0;max-width:46ch}
 .listband .wform{margin:0}.listband .wform input{background:#fff}
 @media(max-width:760px){.listin{grid-template-columns:1fr;gap:20px}.listband{padding:48px 20px}}
+
+.tripinfo{display:grid;gap:4px;padding:16px 18px;border-radius:14px;background:#f5f5f4;font-size:15px;margin-top:6px}
+.tripinfo b{font-size:17px}.tripinfo span{color:#55554f}
+#bk .done{padding:28px;border-radius:20px;background:#f5f5f4}
+#bk .done h2{margin:4px 0 10px!important;font-size:30px!important;line-height:1.1!important}
+#bk .done #b-ref{font-size:22px;letter-spacing:.04em}
+#bk .done ol{margin:18px 0 14px;padding-left:20px;display:grid;gap:8px}
+#bk .done .msg{margin-top:12px;white-space:pre-wrap}
 </style>
 </head>
 <body>
@@ -1033,17 +1041,16 @@ h2{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.02!important;max-wid
   <div class="view" data-view="book">
     <section><div class="wrap two">
       <div>
-        <p class="eyebrow">Book</p><h1 class="pt">Request a booking</h1>
-        <p class="lede">Three short steps. We reply with dates, the price and your ground team. You decide after that.</p>
+        <p class="eyebrow">Book</p><h1 class="pt">Reserve your trip</h1>
+        <p class="lede">Pick a trip and a start date and hold your place. We confirm the date and the price by email. You pay only after you accept.</p>
         <ol class="prog" id="prog"><li class="on">Trip</li><li>Your details</li><li>Review</li></ol>
-        <ul class="checks" style="margin-top:28px"><li>No payment is taken on this site</li><li>Requesting dates carries no obligation</li><li>Your request goes straight to the 32 North team</li></ul>
+        <ul class="checks" style="margin-top:28px"><li>Nothing to pay today</li><li>You get a reservation reference straight away</li><li>We confirm your date and send the price and a payment link by email</li><li>Free to cancel any time before you pay</li></ul>
       </div>
       <form class="form" id="bk" novalidate>
         <div class="stepv" data-step="0">
           <div class="q"><span>Trip</span><div class="opts" id="b-trip"></div><p class="err" id="e-trip"></p></div>
           <div class="q"><span>Group size</span><div class="count"><button type="button" id="b-minus" aria-label="One fewer">−</button><output id="b-n">2</output><button type="button" id="b-plus" aria-label="One more">+</button></div></div>
-          <div class="q"><span>Season</span><div class="opts" id="b-when"></div></div>
-          <div class="q"><label for="b-date">Earliest date you could go (optional)</label><input type="date" id="b-date"></div>
+          <div id="b-when" hidden></div><div class="q"><label for="b-date">Start date</label><input type="date" id="b-date"><p class="err" id="e-date"></p></div><div class="tripinfo" id="b-info" hidden></div>
         </div>
         <div class="stepv" data-step="1" hidden>
           <div class="q"><label for="b-name">Full name</label><input type="text" id="b-name" autocomplete="name"><p class="err" id="e-name"></p></div>
@@ -1053,10 +1060,10 @@ h2{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.02!important;max-wid
           <div class="q"><label for="b-notes">Anything we should know (optional)</label><textarea id="b-notes" rows="3"></textarea></div>
         </div>
         <div class="stepv" data-step="2" hidden>
-          <div class="q"><span>Your request</span><div class="msg" id="b-msg"></div></div>
-          <p class="sent" id="b-sent" role="status" hidden></p><div class="acts"><button class="btn" id="b-send" type="button">Send request</button><a class="btn ghost" id="b-mail" href="mailto:32northexp@gmail.com">Send by email instead</a><button class="btn ghost" id="b-copy" type="button">Copy message</button><p class="addr">Sends to <a href="mailto:32northexp@gmail.com">32northexp@gmail.com</a></p></div>
+          <div class="q"><span>Your reservation</span><div class="msg" id="b-msg"></div></div>
+          <p class="sent" id="b-sent" role="status" hidden></p><div class="acts"><button class="btn" id="b-send" type="button">Reserve</button><a class="btn ghost" id="b-mail" href="mailto:32northexp@gmail.com">Send by email instead</a><button class="btn ghost" id="b-copy" type="button">Copy message</button><p class="addr">Sends to <a href="mailto:32northexp@gmail.com">32northexp@gmail.com</a></p></div>
         </div>
-        <div class="navrow"><button class="btn ghost" type="button" id="b-back" hidden>Back</button><button class="btn" type="button" id="b-next">Continue</button></div>
+        <div class="done" id="b-done" hidden><p class="eyebrow">Reserved</p><h2>Your place is held</h2><p>Reference <b id="b-ref"></b></p><div class="msg" id="b-sum"></div><ol><li>We check the date with the guides, and with the operator for a partner trip.</li><li>We email you the confirmed date, the price and a payment link.</li><li>Your place is booked when you pay. Until then you can cancel by replying to that email.</li></ol><p class="addr">Questions: <a href="mailto:32northexp@gmail.com">32northexp@gmail.com</a>. Quote your reference.</p></div><div class="navrow"><button class="btn ghost" type="button" id="b-back" hidden>Back</button><button class="btn" type="button" id="b-next">Continue</button></div>
       </form>
     </div></section>
   </div>
@@ -1203,7 +1210,7 @@ h2{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.02!important;max-wid
       <div><p class="lede">Ask anything else by email: <a href="mailto:32northexp@gmail.com">32northexp@gmail.com</a></p></div>
       <div>
         <details open><summary>When do trips start?</summary><p>We are scheduling the first dates now. People who request dates receive them before we publish.</p></details>
-        <details><summary>What does a trip cost?</summary><p>Each trip is priced separately. We send the price with the dates. Requesting dates is free.</p></details>
+        <details><summary>What does a trip cost?</summary><p>Each trip is priced separately. Reserve a date and we send the price by email. Reserving is free and you pay only after you accept.</p></details>
         <details><summary>How do I pay?</summary><p>This site takes no payment. We send payment details with your confirmed dates.</p></details>
         <details><summary>Who runs the trips?</summary><p>32 North runs the local trips. Partner operators run the international expeditions, and we name the operator before you book. See <a href="#/partners">partner standards</a>.</p></details>
         <details><summary>How do you choose partners?</summary><p>Each operator has to pass six checks covering licences, insurance, guide qualifications, emergency planning, group size and references. See <a href="#/partners">partner standards</a>.</p></details>
@@ -1840,10 +1847,11 @@ window.scrollTo(0, 0);
   var INTAKE = 'https://script.google.com/macros/s/AKfycbzfANPHyMBFkCLhp7v4LEt4kc_T2A19L-akiShZixeRO53NDH5C-ZqQYYD2x_CqqUy2/exec';
   function post(data){ return fetch(INTAKE, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(data)}); }
   $('b-send').addEventListener('click', function(){
-    var b = $('b-send'), s = $('b-sent'); b.disabled = true; b.textContent = 'Sending';
-    post({kind:'request', trip: st.trip, group: st.n, season: st.when, date: $('b-date').value, name: $('b-name').value.trim(), email: $('b-email').value.trim(), phone: $('b-phone').value.trim(), experience: st.exp, notes: $('b-notes').value.trim()})
-      .then(function(){ s.hidden = false; s.classList.remove('bad'); s.textContent = 'Request sent. We reply by email with dates and a price.'; b.textContent = 'Sent'; })
-      .catch(function(){ s.hidden = false; s.classList.add('bad'); s.textContent = 'That did not send. Use the email button instead.'; b.disabled = false; b.textContent = 'Send request'; });
+    var b = $('b-send'), s = $('b-sent'), t = openBy[st.trip] || {}; b.disabled = true; b.textContent = 'Reserving';
+    if (!REF){ var A = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789', r = ''; for (var i = 0; i < 6; i++) r += A.charAt(Math.floor(Math.random() * A.length)); REF = '32N-' + r; }
+    post({kind:'reservation', ref: REF, status: 'held', trip: st.trip, operator: t.partner || '32 North', length: t.len || '', date: $('b-date').value, group: st.n, price: priceOf(t), name: $('b-name').value.trim(), email: $('b-email').value.trim(), phone: $('b-phone').value.trim(), experience: st.exp, notes: $('b-notes').value.trim()})
+      .then(function(){ $('b-ref').textContent = REF; $('b-sum').textContent = message(); all('#bk .stepv').forEach(function(x){ x.hidden = true; }); document.querySelector('#bk .navrow').hidden = true; $('b-done').hidden = false; all('#prog li').forEach(function(l){ l.classList.add('on'); }); $('b-done').scrollIntoView({block: 'center'}); })
+      .catch(function(){ s.hidden = false; s.classList.add('bad'); s.textContent = 'That did not go through. Use the email button instead.'; b.disabled = false; b.textContent = 'Reserve'; });
   });
   all('.wform').forEach(function(f){ f.addEventListener('submit', function(e){
     e.preventDefault();
@@ -1913,32 +1921,47 @@ window.scrollTo(0, 0);
     b.addEventListener('click', function(){ if (multi) b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); else { st[key] = name; paint(); } });
     box.appendChild(b);
   }); }
-  chips($('b-trip'), TRIPS.map(function(t){ return t.name; }).concat(['Something else', 'Not sure yet']), 'trip');
+  var OPEN = TRIPS.filter(function(t){ return t.type === 'Local trip' || (t.partner && t.stage !== 'talks'); });
+  var PRICE = {costa: '$2,500 to $4,500 per person'};
+  var openBy = {}; OPEN.forEach(function(t){ openBy[t.name] = t; });
+  chips($('b-trip'), OPEN.map(function(t){ return t.name; }), 'trip');
+  (function(){ var d = new Date(Date.now() + 864e5), z = function(n){ return (n < 10 ? '0' : '') + n; }; $('b-date').min = d.getFullYear() + '-' + z(d.getMonth() + 1) + '-' + z(d.getDate()); })();
+  function nice(v){ if (!v) return ''; var p = v.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString('en-US', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}); }
+  function priceOf(t){ return PRICE[t.id] || 'Confirmed by email before you pay'; }
+  var REF = '';
+  $('b-date').addEventListener('input', function(){ if ($('b-date').value >= $('b-date').min){ $('b-date').classList.remove('bad'); $('e-date').textContent = ''; } });
   chips($('b-when'), ['Any season', 'Winter', 'Spring', 'Summer', 'Fall'], 'when');
   chips($('b-exp'), ['None', 'Some', 'A lot'], 'exp');
   chips($('p-has'), ['Licence and permits', 'Insurance certificate', 'Guide qualifications', 'Emergency plan', 'References'], '', true);
   var okMail = function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); };
   function flag(input, errId, msg){ if (input) input.classList.toggle('bad', !!msg); $(errId).textContent = msg || ''; return !msg; }
   function message(){
-    var d = $('b-date').value, ph = $('b-phone').value.trim(), nt = $('b-notes').value.trim();
-    return 'Hello,\n\nPlease send me dates and a price for the following.\n\nTrip: ' + st.trip + '\nGroup size: ' + st.n + '\nSeason: ' + st.when + (d ? '\nEarliest date: ' + d : '') +
-      '\nExperience: ' + st.exp + '\n\nName: ' + $('b-name').value.trim() + '\nEmail: ' + $('b-email').value.trim() + (ph ? '\nPhone: ' + ph : '') + (nt ? '\n\nNotes: ' + nt : '') + '\n\nThank you.';
+    var t = openBy[st.trip] || {}, ph = $('b-phone').value.trim(), nt = $('b-notes').value.trim();
+    return 'Reservation' + (REF ? ' ' + REF : '') + '\n\nTrip: ' + st.trip + (t.partner ? '\nRun by: ' + t.partner : '') + '\nLength: ' + (t.len || '') + '\nStart date: ' + nice($('b-date').value) + '\nGroup size: ' + st.n + '\nPrice: ' + priceOf(t) +
+      '\nExperience: ' + st.exp + '\n\nName: ' + $('b-name').value.trim() + '\nEmail: ' + $('b-email').value.trim() + (ph ? '\nPhone: ' + ph : '') + (nt ? '\n\nNotes: ' + nt : '');
   }
   function paint(){
-    [['b-trip', 'trip'], ['b-when', 'when'], ['b-exp', 'exp']].forEach(function(p){ all('#' + p[0] + ' .tk').forEach(function(b){ b.setAttribute('aria-pressed', b.textContent === st[p[1]] ? 'true' : 'false'); }); });
+    [['b-trip', 'trip'], ['b-exp', 'exp']].forEach(function(p){ all('#' + p[0] + ' .tk').forEach(function(b){ b.setAttribute('aria-pressed', b.textContent === st[p[1]] ? 'true' : 'false'); }); });
     $('b-n').textContent = st.n;
+    var ti = openBy[st.trip], bi = $('b-info'); bi.hidden = !ti;
+    if (ti) $('e-trip').textContent = '';
+    if (ti) bi.innerHTML = '<b>' + ti.name + '</b><span>' + ti.len + (ti.partner ? ' · Run by ' + ti.partner : ' · Run by 32 North') + '</span><span>Price: ' + priceOf(ti) + '</span>';
     all('#bk .stepv').forEach(function(s, i){ s.hidden = i !== step; });
     all('#prog li').forEach(function(l, i){ l.classList.toggle('on', i === step); });
     $('b-back').hidden = step === 0; $('b-next').hidden = step === 2;
-    $('b-next').textContent = step === 1 ? 'Review request' : 'Continue';
-    if (step === 2){ $('b-msg').textContent = message(); $('b-mail').href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Booking request: ' + st.trip) + '&body=' + encodeURIComponent(message()); }
+    $('b-next').textContent = step === 1 ? 'Review reservation' : 'Continue';
+    if (step === 2){ $('b-msg').textContent = message(); $('b-mail').href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Reservation: ' + st.trip) + '&body=' + encodeURIComponent(message()); }
   }
   $('b-minus').addEventListener('click', function(){ st.n = Math.max(1, st.n - 1); paint(); });
   $('b-plus').addEventListener('click', function(){ st.n = Math.min(12, st.n + 1); paint(); });
   $('b-back').addEventListener('click', function(){ step = Math.max(0, step - 1); paint(); });
   $('b-next').addEventListener('click', function(){
     var ok = true;
-    if (step === 0) ok = flag(null, 'e-trip', st.trip ? '' : 'Choose a trip to continue.');
+    if (step === 0){
+      var a0 = flag(null, 'e-trip', openBy[st.trip] ? '' : (st.trip ? 'That trip is not open for reservations yet. Choose one of these.' : 'Choose a trip to continue.'));
+      var dv = $('b-date').value, b0 = flag($('b-date'), 'e-date', !dv ? 'Choose a start date.' : (dv < $('b-date').min ? 'Choose a date from tomorrow on.' : ''));
+      ok = a0 && b0;
+    }
     if (step === 1){
       var a = flag($('b-name'), 'e-name', $('b-name').value.trim() ? '' : 'Enter your name.');
       var b = flag($('b-email'), 'e-email', okMail($('b-email').value.trim()) ? '' : 'Enter a valid email address.');

@@ -831,6 +831,13 @@ h2{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.02!important;max-wid
 .orderbox>p{margin:0 0 18px}
 .orderbox .wform input,.orderbox .wform select,.orderbox .wform textarea{background:#fff}
 @media(max-width:600px){.orderbox{padding:22px}}
+
+.listband{padding:72px 24px;background:#f5f5f4}
+.listin{max-width:1196px;margin:0 auto;display:grid;grid-template-columns:1fr minmax(280px,420px);gap:40px;align-items:center}
+.listband h2{margin:0 0 8px!important;font-size:clamp(26px,3vw,36px)!important;line-height:1.1!important}
+.listband p{margin:0;max-width:46ch}
+.listband .wform{margin:0}.listband .wform input{background:#fff}
+@media(max-width:760px){.listin{grid-template-columns:1fr;gap:20px}.listband{padding:48px 20px}}
 </style>
 </head>
 <body>
@@ -1209,6 +1216,7 @@ h2{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.02!important;max-wid
   </div>
 </main>
 
+<section class="listband" aria-label="Email list"><div class="listin"><div><h2>One email a month</h2><p>New dates, what we found in the field, and trips before they go public. Leave any time.</p></div><form class="wform" data-kind="subscribe" data-ok="You are on the list." data-bad="Enter a valid email address." novalidate><label>Email<input name="email" type="email" autocomplete="email" required></label><input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn" type="submit">Join the list</button><p class="sent" role="status" hidden></p></form></div></section>
 <footer>
   <div class="wrap fcols">
     <div><a class="logo" href="#/"><img class="lmark" src="logo_s.png" alt=""><span>32 North</span></a><p>San Diego, California<br>32°42′57″N 117°09′40″W</p></div>

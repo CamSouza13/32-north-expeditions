@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>32 North Expeditions</title>
+<title>32 North Expeditions. Life at new latitudes.</title>
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -846,6 +846,15 @@ h2{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.02!important;max-wid
 #bk .done #b-ref{font-size:22px;letter-spacing:.04em}
 #bk .done ol{margin:18px 0 14px;padding-left:20px;display:grid;gap:8px}
 #bk .done .msg{margin-top:12px;white-space:pre-wrap}
+
+/* v29 brand: type cards and one photo grade, matching the social system */
+.tcard{display:block;background:#0e0e0f;color:#ecebe6;margin:clamp(20px,3vw,40px) var(--gutter);border-radius:18px;padding:clamp(28px,4vw,52px) clamp(24px,5vw,72px);text-decoration:none}
+.tcard small{display:flex;justify-content:space-between;gap:16px;font:400 12px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(236,235,230,.62)}
+.tcard b{display:block;font:600 clamp(30px,4.8vw,66px)/1.07 var(--head);letter-spacing:-.02em;max-width:17ch;margin:clamp(40px,8vw,120px) 0 clamp(40px,8vw,120px)}
+.tcard .mk{color:#ecebe6;letter-spacing:.04em}.tcard .mk i{font-style:normal;color:#e8501a}
+.tcard .go{color:#ecebe6;border-bottom:1px solid rgba(236,235,230,.5);padding-bottom:2px}
+a.tcard:hover .go{border-color:#e8501a}
+.card .ph img,.card .ph video,.cat,.simg,.phead,#t-hero,.pk-img,.filmtease video,#room-in > img,.scard .sph{filter:saturate(.62) contrast(.94)}
 </style>
 </head>
 <body>
@@ -899,7 +908,7 @@ h2{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.02!important;max-wid
     <video id="v-peaks" muted playsinline hidden></video>
     <aside class="peek" id="peek" aria-hidden="true"><div class="pk-img" id="pk-img"></div><div class="pk-tx"><p class="type" id="pk-type"></p><h3 id="pk-name"></h3><p id="pk-line"></p><dl><div><dt>Length</dt><dd id="pk-len"></dd></div><div><dt>Run with</dt><dd id="pk-op"></dd></div></dl><span class="more" id="pk-go">Click to open ›</span></div></aside>
     <div class="cap">
-      <div><h1>Local trips from San Diego. Expeditions worldwide.</h1><p>Hover or tap any gear to see its trip</p></div>
+      <div><h1>Life at new latitudes.</h1><p>Local trips from San Diego. Expeditions worldwide. Tap any gear to see its trip.</p></div>
       <div class="capbtn"><a class="btn inv" href="#/trips">Browse trips</a><a class="btn line" href="#/book">Request dates</a></div>
     </div>
   </div>
@@ -915,6 +924,7 @@ h2{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.02!important;max-wid
       </div>
     </div>
   </section>
+  <a class="tcard" href="#/trips/local"><small><span>32 North Expeditions</span><span class="mk">32<i>°</i>N</span></small><b>You moved here for the ocean. When were you last out on it?</b><small><span>Life at new latitudes.</span><span class="go">See the San Diego trips</span></small></a>
   <section class="alt findsec">
     <div class="wrap">
       <div class="headrow"><div><p class="eyebrow">Trip finder</p><h2>Three questions. Your trips.</h2></div><a class="btn ghost" href="#/trips">All trips</a></div>
@@ -940,7 +950,7 @@ h2{font-size:clamp(34px,4.4vw,60px)!important;line-height:1.02!important;max-wid
     </div>
   </section>
   <div class="marq" aria-hidden="true"><div><span>Surf</span><span class="o">Dive</span><span>Paddle</span><span class="o">Climb</span><span>Ride</span><span class="o">Ski</span><span>Sail</span><span class="o">Trek</span><span>Surf</span><span class="o">Dive</span><span>Paddle</span><span class="o">Climb</span><span>Ride</span><span class="o">Ski</span><span>Sail</span><span class="o">Trek</span></div></div>
-  <a class="band" href="#/book" style="background-image:url(ice.jpg)"><span><b>Dates are being scheduled now.</b><i>Request dates</i></span></a>
+  <a class="tcard" href="#/book"><small><span>32 North Expeditions</span><span class="mk">32<i>°</i>N</span></small><b>Reserve now. Pay nothing until you say yes.</b><small><span>Life at new latitudes.</span><span class="go">Reserve a date</span></small></a>
   <section class="split">
     <div class="simg" style="background-image:url(rock.jpg)"></div>
     <div class="stx">
@@ -1708,7 +1718,7 @@ window.scrollTo(0, 0);
     if (!document.querySelector('.view[data-view="' + name + '"]')) name = 'home';
     if (name === 'trips'){ var fb = document.querySelector('.filters button[data-f="' + (p[1] || 'all') + '"]'); if (fb) fb.click(); }
     if (name === 'book'){ if (p[1] && byId[p[1]]) st.trip = byId[p[1]].name; step = 0; paint(); }
-    if (name !== 'trip') document.title = '32 North Expeditions';
+    if (name !== 'trip') document.title = '32 North Expeditions. Life at new latitudes.';
     all('video').forEach(function(v){ if (!v.closest('#intro') && !v.hasAttribute('data-auto')) v.pause(); });
     view = name;
     top.classList.remove('open'); $('menu').setAttribute('aria-expanded', 'false');

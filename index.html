@@ -861,6 +861,12 @@ a.tcard:hover .go{border-color:#e8501a}
 .view[data-view="home"] .headrow .lede{margin-top:8px;font-size:16px}
 .view[data-view="home"] .doors{padding-top:clamp(20px,3vw,40px)}
 .view[data-view="home"] .doorrow{margin-top:0}
+
+/* v31 tighter homepage */
+.view[data-view="home"] section{padding-top:clamp(26px,3.2vw,44px)!important;padding-bottom:clamp(26px,3.2vw,44px)!important}
+.view[data-view="home"] .tcard{margin-top:clamp(12px,1.6vw,22px);margin-bottom:clamp(12px,1.6vw,22px)}
+.tcard b{margin:clamp(30px,5vw,72px) 0}
+.view[data-view="home"] .grid{margin-top:18px}
 </style>
 </head>
 <body>
@@ -931,20 +937,21 @@ a.tcard:hover .go{border-color:#e8501a}
     </div>
   </section>
   <a class="tcard" href="#/trips/local"><small><span>32 North Expeditions</span><span class="mk">32<i>°</i>N</span></small><b>You moved here for the ocean. When were you last out on it?</b><small><span>Life at new latitudes.</span><span class="go">See the San Diego trips</span></small></a>
-  <section id="activities">
-    <div class="wrap">
-      <div class="headrow"><div><p class="eyebrow">Partner expeditions</p><h2>Expeditions</h2><p class="lede">Six trips abroad. One operator for each, named before you book.</p></div><a class="btn ghost" href="#/trips">All trips</a></div>
-      <div class="grid big" data-grid="exp"></div>
-    </div>
-  </section>
   <section class="alt">
     <div class="wrap">
       <div class="headrow"><div><p class="eyebrow">San Diego trips</p><h2>San Diego trips</h2></div><a class="btn ghost" href="#/trips">See all seven</a></div>
       <div class="grid" data-grid="local"></div>
     </div>
   </section>
+  <a class="tcard" href="#/trips/exp"><small><span>32 North Expeditions</span><span class="mk">32<i>°</i>N</span></small><b>It has been on your list for ten years.</b><small><span>Life at new latitudes.</span><span class="go">See the expeditions</span></small></a>
+  <section id="activities">
+    <div class="wrap">
+      <div class="headrow"><div><p class="eyebrow">Partner expeditions</p><h2>Expeditions</h2></div><a class="btn ghost" href="#/trips">All trips</a></div>
+      <div class="grid big" data-grid="exp"></div>
+    </div>
+  </section>
   <div class="marq" aria-hidden="true"><div><span>Surf</span><span class="o">Dive</span><span>Paddle</span><span class="o">Climb</span><span>Ride</span><span class="o">Ski</span><span>Sail</span><span class="o">Trek</span><span>Surf</span><span class="o">Dive</span><span>Paddle</span><span class="o">Climb</span><span>Ride</span><span class="o">Ski</span><span>Sail</span><span class="o">Trek</span></div></div>
-  <a class="tcard" href="#/book"><small><span>32 North Expeditions</span><span class="mk">32<i>°</i>N</span></small><b>Reserve now. Pay nothing until you say yes.</b><small><span>Life at new latitudes.</span><span class="go">Reserve a date</span></small></a>
+
   <section class="split">
     <div class="simg" style="background-image:url(rock.jpg)"></div>
     <div class="stx">
@@ -1193,7 +1200,7 @@ a.tcard:hover .go{border-color:#e8501a}
   </div>
 </main>
 
-<section class="listband" aria-label="Email list"><div class="listin"><div><h2>One email a month</h2><p>New dates, what we found in the field, and trips before they go public. Leave any time.</p></div><form class="wform" data-kind="subscribe" data-ok="You are on the list." data-bad="Enter a valid email address." novalidate><label>Email<input name="email" type="email" autocomplete="email" required></label><input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn" type="submit">Join the list</button><p class="sent" role="status" hidden></p></form></div></section>
+<section class="listband" aria-label="Email list"><div class="listin"><div><h2>Get the dates first</h2><p>New trips go to this list before they go on the site. One email a month.</p></div><form class="wform" data-kind="subscribe" data-ok="You are on the list." data-bad="Enter a valid email address." novalidate><label>Email<input name="email" type="email" autocomplete="email" required></label><input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn" type="submit">Join the list</button><p class="sent" role="status" hidden></p></form></div></section>
 <footer>
   <div class="wrap fcols">
     <div><a class="logo" href="#/"><img class="lmark" src="logo_s.png" alt=""><span>32 North</span></a><p>San Diego, California<br>32°42′57″N 117°09′40″W</p></div>
